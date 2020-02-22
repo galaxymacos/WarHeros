@@ -8,34 +8,22 @@ public class Nurse: MonoBehaviour
 {
     private void Awake()
     {
-        
+        // TODO position = GameManager.instance.GetTrenchPosition(0);
     }
 
+    // adjustable
+    public Sprite sprite;
+    
+    // 
     public Position position;
     public Skill skill;
     public int mobilityEachTurn;
     public int mobilityCounter = 0;
     
     
+    
+    
     public bool isPlaying => mobilityCounter > 0;
-}
-
-public class RedNurse: Nurse
-{
-    public RedNurse()
-    {
-        skill = new Defuse();
-        mobilityCounter = 1;
-    }
-}
-
-public class GreenNurse : Nurse
-{
-    public GreenNurse()
-    {
-        skill = new DetectMine();
-        mobilityCounter = 1;
-    }
 }
 
 public class Defuse: Skill{
