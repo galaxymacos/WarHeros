@@ -17,9 +17,4 @@ public class SoldierLocations : MonoBehaviour
             frames[i].GetComponentInChildren<Text>().text = arr[i].ToString();//position row col;
         }
     }
-
-    public void SetVisibility(bool visibility)
-    {
-        this.gameObject.SetActive(visibility);
-    }
 }
