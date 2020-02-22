@@ -6,11 +6,11 @@ namespace Assets.Scripts
 {
     public class Tough : Skill
     {
-        const int skillPointMax = 1;
+        const int skillPointMax = 3;
         private void Start()
         {
-            skillName = "Pistolet-Seringue";
-            skillDescription = "Permet à l'infirmière de soigner un soldat situé dans une case adjacente.";
+            skillName = "Solidité Fromagère";
+            skillDescription = "Permet à l'infirmière de ne pas revenir à la tranchée lorsqu'elle déclenche une mine. 3 charges.";
             isSkillAvailable = true;
             skillPoint = 1;
         }

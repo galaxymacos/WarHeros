@@ -9,8 +9,8 @@ namespace Assets.Scripts
         const int skillPointMax = 1;
         private void Start()
         {
-            skillName = "Pistolet-Seringue";
-            skillDescription = "Permet à l'infirmière de soigner un soldat situé dans une case adjacente.";
+            skillName = "Acuité visuelle";
+            skillDescription = "Permet à l'infirmière de détecter les mines autour d'elle .";
             isSkillAvailable = true;
             skillPoint = 1;
         }

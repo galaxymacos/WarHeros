@@ -24,4 +24,9 @@ public class Skill : MonoBehaviour
         result[1] = skillDescription;
         return result;
     }
+    
+    public virtual bool IsSkillAvailable()
+    {
+        return isSkillAvailable;
+    }
 }

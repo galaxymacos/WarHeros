@@ -10,7 +10,7 @@ namespace Assets.Scripts
         private void Start()
         {
             skillName = "Pistolet-Seringue";
-            skillDescription = "Permet à l'infirmière de soigner un soldat situé dans une case adjacente.";
+            skillDescription = "Permet à l'infirmière de soigner un soldat situé dans une case adjacente. 1 charge.";
             isSkillAvailable = true;
             skillPoint = 1;
         }
