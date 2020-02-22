@@ -20,14 +20,14 @@ public class Nurse: MonoBehaviour
     public int mobilityEachTurn;
     public int mobilityCounter = 0;
     public bool canMove => mobilityCounter > 0;
-    // TODO public bool canHeal =>  GameManager.instance.SoldierInSquare(Position position) for Adrien to implement
+    public bool canHeal => GameManager.instance.bf.IsThereSoldier(position);
 
     
     public void Heal()
     {
         // if (canHeal)
         // {
-        //     RemoveSoliderFromBattleField(position);
+        //     RemoveSoldierFromBattleField(position);
         // }
     }
 
@@ -55,8 +55,10 @@ public class Nurse: MonoBehaviour
                 // bool canMoveTo = !GameManager.instance.WallAtPosition(newPosition);
                 // if (canMoveTo)
                 // {
+                //
                 // position = newPosition;
-                // }
+                // moveCompleted();
+            // }
                 // else
             // {
                 // UIMessager.instance.onInvalidNursePosition?.Invoke(newPosition);

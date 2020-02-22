@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameLoop: MonoBehaviour
@@ -7,6 +8,8 @@ public class GameLoop: MonoBehaviour
     
     public List<Nurse> nurses;
     private int currentNurseToMove;
+
+    Action onNurseMoveComplete;
 
     private void Awake()
     {
@@ -17,6 +20,14 @@ public class GameLoop: MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    public void CheckNextTurn()
+    {
+        if (nurses[currentNurseToMove].mobilityCounter == 0)
+        {
+            NextTurn();
         }
     }
 
