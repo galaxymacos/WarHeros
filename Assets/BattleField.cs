@@ -148,6 +148,7 @@ class BattleField
     {
         if (pos.row < 0 || pos.column < 0 || pos.row > depth || pos.column > width)
         {
+            Debug.Log("pos " + pos.row + "," + pos.column + " is not in board");
             Debug.Log("row" + pos.row + " col" + pos.column);
             return false;
         }
