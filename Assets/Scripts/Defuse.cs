@@ -6,26 +6,18 @@ namespace Assets.Scripts
 {
     public class Defuse : Skill
     {
-        readonly string skillName;
-        readonly string skillDescription;
-        private int skillPoint;
-        private bool isSkillAvailable;
-        private const int skillPointMax = 1;
-
-        public Defuse(string skillName, string skillDescription, int skillPoint) : base(skillName, skillDescription, skillPoint)
+        const int skillPointMax = 1;
+        private void Start()
         {
-            this.skillName = skillName;
-            this.skillDescription = skillDescription;
-            this.skillPoint = skillPoint;
+            skillName = "Pistolet-Seringue";
+            skillDescription = "Permet à l'infirmière de soigner un soldat situé dans une case adjacente.";
             isSkillAvailable = true;
+            skillPoint = 1;
         }
 
         public override void Activate()
         {
-            if (isSkillAvailable)
-            {
-                skillPoint--;
-            }
+            skillPoint--;
             if (skillPoint == 0)
             {
                 isSkillAvailable = false;
@@ -38,14 +30,6 @@ namespace Assets.Scripts
             {
                 skillPoint++;
             }
-        }
-
-        public string[] ReadSkill()
-        {
-            string[] result = new string[2];
-            result[0] = skillName;
-            result[1] = skillDescription;
-            return result;
         }
 
         public bool IsSkillAvailable()

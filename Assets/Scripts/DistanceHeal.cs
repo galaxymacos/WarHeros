@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class Detect : Skill
+    public class DistanceHeal : Skill
     {
         const int skillPointMax = 1;
         private void Start()
