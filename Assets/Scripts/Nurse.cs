@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Nurse: MonoBehaviour
 {
+    
     private void Awake()
     {
         position = GameManager.instance.bf.getTrenchPosition(0);
@@ -25,6 +26,7 @@ public class Nurse: MonoBehaviour
     public Action onNurseMoveComplete;
 
     
+    // Heal the soldider in the nurse's position
     public void Heal()
     {
         if (canHeal)
@@ -34,6 +36,7 @@ public class Nurse: MonoBehaviour
         skill.Replenish();
     }
 
+    // Heal the soldier at a desired position
     public void Heal(Position checkPosition)
     {
         if (canHeal)
@@ -70,6 +73,10 @@ public class Nurse: MonoBehaviour
         if (GameManager.instance.bf.IsPosInBoard(newPosition))
         {
             position = newPosition;
+        }
+        else
+        {
+            UIMessager.instance.onInvalidNursePosition?.Invoke(newPosition);
         }
 
 
