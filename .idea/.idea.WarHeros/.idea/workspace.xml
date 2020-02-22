@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4434f1d-edd1-472a-ba51-fb0ae74c6b7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Position.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Position.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Skill.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Skill.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nurse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Nurse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Position.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Position.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582382093115</updated>
       <workItem from="1582382097160" duration="1952000" />
-      <workItem from="1582386837636" duration="2187000" />
+      <workItem from="1582386837636" duration="3568000" />
     </task>
     <servers />
   </component>

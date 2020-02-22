@@ -1,14 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Nurse
+
+public class Nurse: MonoBehaviour
 {
-    public Nurse()
+    private void Awake()
     {
-        // TODO position = GetNextNursePosition()
+        
     }
-    
+
     public Position position;
     public Skill skill;
     public int mobilityEachTurn;
@@ -39,7 +41,7 @@ public class GreenNurse : Nurse
 public class Defuse: Skill{
     public override void Cast()
     {
-        // Demine(int x, int y)
+        // GameManager.instance.Demine(Position defusePosition)
     }
 }
 
@@ -47,7 +49,22 @@ public class DetectMine : Skill
 {
     public override void Cast()
     {
-        // List<Position> minePositions = GameManager.BattleField.GetMinePositionAround(Position nursePosition)
+        // TODO List<Position> minePositions = GameManager.instance.battleField.GetMinePositionAround(Position nursePosition)
     }
+}
+
+public class GameLoop: MonoBehaviour
+{
+    public static GameLoop instance;
+    
+    public List<Nurse> nurses;
+    private int currentNurseToMove;
+    
+    
+    
+}
+
+public enum GameState{
+    Nurse1, Nurse2, Nurse3, Nurse4
 }
 
