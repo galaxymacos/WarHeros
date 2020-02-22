@@ -10,7 +10,7 @@ public class BattleField
     char[,] matrix;
     const char MINECHAR = 'm';
     const char SOLDIERCHAR = 's';
-    int width, depth, mineCount, soldierCount;
+    public int width, depth, mineCount, soldierCount;
 
     public BattleField(int width, int depth, int mineCount, int soldierCount)
     {

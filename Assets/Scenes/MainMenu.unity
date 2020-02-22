@@ -438,7 +438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &860120640
 RectTransform:
   m_ObjectHideFlags: 0
@@ -840,6 +840,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cbe569027f0144f903137aa2f91d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RegimenLives: 3
+  soldiersToSave: 3
 --- !u!1 &1983780524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,7 +1677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5085678624745368543
 RectTransform:
   m_ObjectHideFlags: 0

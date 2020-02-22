@@ -9,6 +9,7 @@ public class GameLoop: MonoBehaviour
     public int currentNurseToMove;
 
     public Action onNurseMoveComplete;
+    public static Action<Nurse> onNurseStepOnMine;
 
     private void Awake()
     {
@@ -26,44 +27,64 @@ public class GameLoop: MonoBehaviour
         StartGame();
     }
     
-    
-
     public void NurseMoveComplete()
     {
         // If the current moving nurse steps on a mine
         if (GameManager.instance.bf.CheckForMine(NurseManager.instance.nurses[currentNurseToMove].position))
         {
+            onNurseStepOnMine?.Invoke(NurseManager.instance.nurses[currentNurseToMove]);
+            
+            
             DeselectTheCurrentNurse();
         }
+
+        NurseManager.instance.nurses[currentNurseToMove].mobilityCounter -= 1;
         
         if (NurseManager.instance.nurses[currentNurseToMove].mobilityCounter == 0)
         {
             DeselectTheCurrentNurse();
         }
+
+
+        if (AreNursesFinishMovement())
+        {
+            NextRound();
+        }
+        
     }
 
     public void DeselectTheCurrentNurse()
     {
+        NurseManager.instance.nurses[currentNurseToMove].mobilityCounter = 0;
         currentNurseToMove = -1;
     }
-
-   
-
-    public void NextTurn()
+    public bool AreNursesFinishMovement()
     {
-        currentNurseToMove++;
-        if (currentNurseToMove >= NurseManager.instance.nurses.Count)
+        foreach (Nurse nurse in NurseManager.instance.nurses)
         {
-            currentNurseToMove = 0;
+            if (nurse.hasMobility)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+    public void NextRound()
+    {
+        foreach (Nurse nurse in NurseManager.instance.nurses)
+        {
+            nurse.ReplenishMobility();
         }
         
-        NurseManager.instance.nurses[currentNurseToMove].ReplenishMobility();
+        DeselectTheCurrentNurse();
     }
     
     
 
     public void StartGame()
     {
+        print("Start the game");
         DeselectTheCurrentNurse();
     }
     

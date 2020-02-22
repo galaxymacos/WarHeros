@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public BattleField bf;
 
-    public int RegimenLives = 3;
-    public int soldiersToSave = 3;
+    [SerializeField] public int RegimenLives = 3;
+    [SerializeField] public int soldiersToSave = 3;
     
     
     
@@ -31,7 +31,34 @@ public class GameManager : MonoBehaviour
     {
         RegimenLives -= 1;
         soldiersToSave += 1;
+        CheckGameEndCondition();
+
     }
+
+    public void NurseStepsOnMineWithToughness()
+    {
+        RegimenLives -= 1;
+        CheckGameEndCondition();
+
+    }
+
+    public void SoldierDie()
+    {
+        RegimenLives -= 1;
+        CheckGameEndCondition();
+    }
+
+    public void NurseDie()
+    {
+        NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].MoveNurseBackToTrench();
+        RegimenLives -= 1;
+        soldiersToSave += 1;
+        CheckGameEndCondition();
+    }
+    
+    
+
+
 
     public void CheckGameEndCondition()
     {

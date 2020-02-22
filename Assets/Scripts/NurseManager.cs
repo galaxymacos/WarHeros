@@ -19,6 +19,8 @@ public class NurseManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        GameLoop.onNurseStepOnMine += TakeDamage;
     }
     
     public bool HasNurseInPosition(Position position)
@@ -32,6 +34,19 @@ public class NurseManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void TakeDamage(Nurse nurse)
+    {
+        if (nurse.toughness > 0)
+        {
+            nurse.toughness--;       
+            GameManager.instance.NurseStepsOnMineWithToughness();
+        }
+        else
+        {
+            GameManager.instance.NurseStepsOnMine();
+        }
     }
     
 }

@@ -9,7 +9,7 @@ public class Nurse: MonoBehaviour
     private void Awake()
     {
         position = GameManager.instance.bf.getTrenchPosition(0);
-        // TODO skill.owner = this; For Theo to implement
+        mobilityCounter = mobilityEachTurn;
     }
 
     // adjustable
@@ -20,10 +20,12 @@ public class Nurse: MonoBehaviour
     public Skill skill;
     public int mobilityEachTurn;
     public int mobilityCounter = 0;
-    public bool canMove => mobilityCounter > 0;
+    public int toughness;
+    public bool hasMobility => mobilityCounter > 0;
     public bool canHeal => GameManager.instance.bf.IsThereSoldier(position);
 
-    public Action onNurseMoveComplete;
+    public bool hasSpawned;
+
 
     
     // Heal the soldider in the nurse's position
@@ -32,8 +34,9 @@ public class Nurse: MonoBehaviour
         if (canHeal)
         {
             GameManager.instance.bf.RemoveSoldier(position);
+            skill.Replenish();
+            GameLoop.instance.onNurseMoveComplete?.Invoke();
         }
-        skill.Replenish();
     }
 
     // Heal the soldier at a desired position
@@ -41,9 +44,16 @@ public class Nurse: MonoBehaviour
     {
         if (canHeal)
         {
-            GameManager.instance.bf.RemoveSoldier(checkPosition);
+            GameManager.instance.bf.RemoveSoldier(checkPosition);        
+            skill.Replenish();
+            GameLoop.instance.onNurseMoveComplete?.Invoke();
         }
-        skill.Replenish();
+    }
+
+    public void SetBirthLocation(int columnIndex)
+    {
+        hasSpawned = true;
+        position = new Position(0, columnIndex);
     }
 
     public void Move(NurseMoveDirection nurseMoveDirection)
@@ -53,7 +63,6 @@ public class Nurse: MonoBehaviour
         {
             case NurseMoveDirection.Up:
                 newPosition = new Position(position.row+1, position.column);
-                // GameManager.instance.WallAtPosition(Position position);
                 break;
             case NurseMoveDirection.Down:
                 newPosition = new Position(position.row-1, position.column);
@@ -66,13 +75,12 @@ public class Nurse: MonoBehaviour
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(nurseMoveDirection), nurseMoveDirection, null);
-
-               
         }
         // TODO Adrian  
         if (GameManager.instance.bf.IsPosInBoard(newPosition))
         {
             position = newPosition;
+            print($"Nurse {NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove]} moves to row {position.row}, column {position.column}");
         }
         else
         {
@@ -89,16 +97,19 @@ public class Nurse: MonoBehaviour
         mobilityCounter = mobilityEachTurn;
     }
 
-    // public void CastSkill()
-    // {
-    //     // TODO skill 
-    //     // if ()
-    //     {
-    //     // mobilityCounter--;
-    //     // GameLoop.instance.onNurseMoveComplete?.Invoke();
-    //
-    //     // }
-    // }
+    public void CastSkill()
+    {
+        if (skill.IsSkillAvailable())
+        {
+            skill.Activate();
+        }
+        GameLoop.instance.onNurseMoveComplete?.Invoke();
+    }
+
+    public void MoveNurseBackToTrench()
+    {
+        position = GameManager.instance.bf.getTrenchPosition(0);    // TODO move to the near trench
+    }
 
 
 
