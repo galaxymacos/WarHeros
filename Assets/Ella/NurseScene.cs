@@ -37,7 +37,7 @@ public class NurseScene : MonoBehaviour
     {
         //positionTxt.text = position.Convert();
         //nursePoetry = ChangePoetry();
-        nurseImage.sprite = SetCurrentIndex(nIndex);
+        nurseImage.sprite = ChangePoetry();
         positionTxt.text = "A1";
         Debug.Log("Hello");
         Debug.Log(positionTxt.name);
