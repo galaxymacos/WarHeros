@@ -6,30 +6,23 @@ namespace Assets.Scripts
 {
     public class Detect : Skill
     {
-        readonly string skillName;
-        readonly string skillDescription;
-        private int skillPoint;
-        private bool isSkillAvailable;
-        private const int skillPointMax = 1;
-
-        public Detect(string skillName, string skillDescription, int skillPoint) : base(skillName, skillDescription, skillPoint)
+        const int skillPointMax = 1;
+        private void Start()
         {
-            this.skillName = skillName;
-            this.skillDescription = skillDescription;
-            this.skillPoint = skillPoint;
+            skillName = "Acuité visuelle";
+            skillDescription = "Permet à l'infirmière de détecter toutes les mines autour d'elle dans un rayon de 1 case. 1 charge.";
             isSkillAvailable = true;
+            skillPoint = 1;
         }
 
         public override void Activate()
         {
-            if (isSkillAvailable)
-            {
-                skillPoint--;
-            }
+            skillPoint--;
             if (skillPoint == 0)
             {
                 isSkillAvailable = false;
             }
+            GameManager.instance.bf.GetMineArroundPosition(NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].position);
         }
 
         public override void Replenish()
@@ -38,19 +31,6 @@ namespace Assets.Scripts
             {
                 skillPoint++;
             }
-        }
-
-        public string[] ReadSkill()
-        {
-            string[] result = new string[2];
-            result[0] = skillName;
-            result[1] = skillDescription;
-            return result;
-        }
-
-        public bool IsSkillAvailable()
-        {
-            return isSkillAvailable;
         }
     }
 }

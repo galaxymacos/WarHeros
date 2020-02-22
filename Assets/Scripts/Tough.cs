@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class Defuse : Skill
+    public class Tough : Skill
     {
-        const int skillPointMax = 1;
+        const int skillPointMax = 3;
         private void Start()
         {
-            skillName = "Le fil bleu avec le fil rouge, et...";
-            skillDescription = "Permet à l'infirmière de se déplacer sur une case. S'il y a une mine, celle-ci est désactivée. 1 charge.";
+            skillName = "Solidité de la Fromagère";
+            skillDescription = "Permet à l'infirmière de ne pas revenir à la tranchée lorsqu'elle déclenche une mine. 3 charges.";
             isSkillAvailable = true;
             skillPoint = 1;
         }
@@ -22,7 +22,7 @@ namespace Assets.Scripts
             {
                 isSkillAvailable = false;
             }
-            GameManager.instance.bf.Demine(NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].position);
+
         }
 
         public override void Replenish()

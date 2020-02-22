@@ -7,14 +7,14 @@ public class Nurse: MonoBehaviour
 {
     private void Awake()
     {
-        // TODO position = GameManager.instance.GetTrenchPosition(0);
+        position = GameManager.instance.bf.getTrenchPosition(0);
         // TODO skill.owner = this; For Theo to implement
     }
 
     // adjustable
     public Sprite sprite;
     
-    // 
+    [Header("Don't change the below variable")]
     public Position position;
     public Skill skill;
     public int mobilityEachTurn;
@@ -22,13 +22,25 @@ public class Nurse: MonoBehaviour
     public bool canMove => mobilityCounter > 0;
     public bool canHeal => GameManager.instance.bf.IsThereSoldier(position);
 
+    public Action onNurseMoveComplete;
+
     
     public void Heal()
     {
-        // if (canHeal)
-        // {
-        //     RemoveSoldierFromBattleField(position);
-        // }
+        if (canHeal)
+        {
+            GameManager.instance.bf.RemoveSoldier(position);
+        }
+        skill.Replenish();
+    }
+
+    public void Heal(Position checkPosition)
+    {
+        if (canHeal)
+        {
+            GameManager.instance.bf.RemoveSoldier(checkPosition);
+        }
+        skill.Replenish();
     }
 
     public void Move(NurseMoveDirection nurseMoveDirection)
@@ -52,18 +64,17 @@ public class Nurse: MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException(nameof(nurseMoveDirection), nurseMoveDirection, null);
 
-                // bool canMoveTo = !GameManager.instance.WallAtPosition(newPosition);
-                // if (canMoveTo)
-                // {
-                //
-                // position = newPosition;
-                // moveCompleted();
-            // }
-                // else
-            // {
-                // UIMessager.instance.onInvalidNursePosition?.Invoke(newPosition);
-            // }
+               
         }
+        // TODO Adrian  
+        if (GameManager.instance.bf.IsPosInBoard(newPosition))
+        {
+            position = newPosition;
+        }
+
+
+
+        GameLoop.instance.onNurseMoveComplete?.Invoke();
     }
 
     public void ReplenishMobility()
@@ -73,7 +84,13 @@ public class Nurse: MonoBehaviour
 
     // public void CastSkill()
     // {
-        // skill.Activate(this);
+    //     // TODO skill 
+    //     // if ()
+    //     {
+    //     // mobilityCounter--;
+    //     // GameLoop.instance.onNurseMoveComplete?.Invoke();
+    //
+    //     // }
     // }
 
 
