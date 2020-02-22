@@ -19,27 +19,18 @@ public class Nurse: MonoBehaviour
     public Skill skill;
     public int mobilityEachTurn;
     public int mobilityCounter = 0;
+    public bool canMove => mobilityCounter > 0;
+
+
+    public void Heal()
+    {
+        
+    }
     
     
-    
-    
-    public bool isPlaying => mobilityCounter > 0;
 }
 
-public class Defuse: Skill{
-    public override void Cast()
-    {
-        // GameManager.instance.Demine(Position defusePosition)
-    }
-}
 
-public class DetectMine : Skill
-{
-    public override void Cast()
-    {
-        // TODO List<Position> minePositions = GameManager.instance.battleField.GetMinePositionAround(Position nursePosition)
-    }
-}
 
 public class GameLoop: MonoBehaviour
 {
@@ -47,8 +38,15 @@ public class GameLoop: MonoBehaviour
     
     public List<Nurse> nurses;
     private int currentNurseToMove;
-    
-    
+
+    public void NextTurn()
+    {
+        currentNurseToMove++;
+        if (currentNurseToMove >= nurses.Count)
+        {
+            currentNurseToMove = 0;
+        }
+    }
     
 }
 
