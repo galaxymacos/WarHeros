@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-class BattleField
+public class BattleField
 {
     //Random rnjesus;
 
@@ -24,14 +24,27 @@ class BattleField
     public BattleField()
     {
         matrix = new char[6, 6];
+        width = 6;
+        depth = 6;
         matrix[0, 0] = MINECHAR;
+        matrix[0, 1] = MINECHAR;
         matrix[5, 5] = SOLDIERCHAR;
 
         Debug.Log(CheckForMine(new Position(0, 0)));
         Debug.Log(CheckForMine(new Position(1, 0)));
         Debug.Log(IsThereSoldier(new Position(5, 5)));
         Debug.Log(IsThereSoldier(new Position(5, 3)));
-        Debug.Log(GetSoldiers());
+        var Sols = GetSoldiers();
+        foreach (var s in Sols)
+        {
+            Debug.Log(s.column + "," + s.row);
+        }
+        var mines = GetMineArroundPosition(new Position(1, 1));
+        foreach (var m in mines)
+        {
+            Debug.Log(m.column + "," + m.row);
+        }
+
     }
 
     private void FillField(int mineCount)
@@ -144,26 +157,26 @@ class BattleField
         return false;
     }
 
-    private bool IsPosInBoard(Position pos)
+    public bool IsPosInBoard(Position pos)
     {
         if (pos.row < 0 || pos.column < 0 || pos.row > depth || pos.column > width)
         {
-            Debug.Log("pos " + pos.row + "," + pos.column + " is not in board");
-            Debug.Log("row" + pos.row + " col" + pos.column);
             return false;
         }
         return true;
     }
 
-    public void Demine(Position pos)
+    public bool Demine(Position pos)
     {
         if(IsPosInBoard(pos))
         {
             if(matrix[pos.row,pos.column]==MINECHAR)
             {
                 matrix[pos.row, pos.column] = default;
+                return true;
             }
         }
+        return false;
     }
 
     public Position getTrenchPosition(int trenchIndex)
@@ -180,7 +193,6 @@ class BattleField
     {
         if(IsPosInBoard(pos))
         {
-            Debug.Log(matrix[pos.row, pos.column]);
             return matrix[pos.row, pos.column] == SOLDIERCHAR;
         }
         return false;
@@ -236,6 +248,17 @@ class BattleField
             }
         }
         return output;
+    }
+
+    public void RemoveSoldier(Position pos)
+    {
+        if(IsPosInBoard(pos))
+        {
+            if(matrix[pos.row, pos.column]==SOLDIERCHAR)
+            {
+                matrix[pos.row, pos.column] = default;
+            }
+        }
     }
 
     //public void PrintField()
