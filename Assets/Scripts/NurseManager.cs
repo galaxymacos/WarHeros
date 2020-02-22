@@ -6,7 +6,7 @@ using UnityEngine;
 public class NurseManager : MonoBehaviour
 {
     public List<Nurse> nurses;
-    
+
     
 
     public static NurseManager instance;
@@ -21,5 +21,18 @@ public class NurseManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    
+    public bool HasNurseInPosition(Position position)
+    {
+        foreach (Nurse nurse in nurses)
+        {
+            if (nurse.position.column == position.column && nurse.position.row == position.row)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

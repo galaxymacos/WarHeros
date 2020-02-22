@@ -34,6 +34,15 @@ public class Nurse: MonoBehaviour
         skill.Replenish();
     }
 
+    public void Heal(Position checkPosition)
+    {
+        if (canHeal)
+        {
+            GameManager.instance.bf.RemoveSoldier(checkPosition);
+        }
+        skill.Replenish();
+    }
+
     public void Move(NurseMoveDirection nurseMoveDirection)
     {
         Position newPosition;

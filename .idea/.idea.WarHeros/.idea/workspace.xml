@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" afterDir="false" />
     </list>
@@ -56,10 +55,10 @@
         <option value="$PROJECT_DIR$/Assets/RedNurse.cs" />
         <option value="$PROJECT_DIR$/Assets/BattleField.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Detect.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" />
+        <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" />
       </list>
     </option>
   </component>
@@ -111,7 +110,7 @@
       <updated>1582382093115</updated>
       <workItem from="1582382097160" duration="1952000" />
       <workItem from="1582386837636" duration="9816000" />
-      <workItem from="1582398260314" duration="4780000" />
+      <workItem from="1582398260314" duration="5311000" />
     </task>
     <servers />
   </component>

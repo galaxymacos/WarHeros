@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         soldiersToSave += 1;
     }
 
-    public void CheckGameEngCondition()
+    public void CheckGameEndCondition()
     {
         if (RegimenLives <= 0)
         {

@@ -12,6 +12,7 @@
           <e p="Defuse.cs" t="Include" />
           <e p="Detect.cs" t="Include" />
           <e p="DistanceHeal.cs" t="Include" />
+          <e p="Events.cs" t="Include" />
           <e p="GameLoop.cs" t="Include" />
           <e p="GreenNurse.cs" t="Include" />
           <e p="Nurse.cs" t="Include" />
