@@ -6,8 +6,8 @@ namespace Assets.Scripts
 {
     public class Detect : Skill
     {
-        string skillName;
-        string skillDescription;
+        readonly string skillName;
+        readonly string skillDescription;
         private int skillPoint;
         private bool isSkillAvailable;
         private const int skillPointMax = 1;
