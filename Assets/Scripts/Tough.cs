@@ -22,7 +22,7 @@ namespace Assets.Scripts
             {
                 isSkillAvailable = false;
             }
-            //TODO 
+            //TODO : implement a tough logic : doesn't come back to trench but the life lost isn't added to the "lives to save" pile
         }
 
         public override void Replenish()
