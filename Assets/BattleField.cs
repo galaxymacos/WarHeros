@@ -44,7 +44,7 @@ public class BattleField
         {
             Debug.Log(m.column + "," + m.row);
         }
-
+        SpawnSoldiers(soldierCount);
     }
 
     private void FillField(int mineCount)
