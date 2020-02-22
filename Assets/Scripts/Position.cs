@@ -11,6 +11,6 @@
 
     public string Convert()
     {
-        return (char)(this.row + 65) + this.column.ToString();
+        return (char)(this.row + 65) + (this.column + 1).ToString();
     }
 }

@@ -20,6 +20,7 @@ public class Events : MonoBehaviour
     }
 
     void SpawnSoldier()
-    { 
-}
+    {
+
+    }
 }

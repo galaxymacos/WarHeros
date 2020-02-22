@@ -13,7 +13,6 @@ public class SoldierLocations : MonoBehaviour
     {
         soldierPositions = GameManager.instance.bf.GetSoldiers();
 
-        //get soldier position in a list from the battlefield - row and col
         for (int i = 0; i <soldierPositions.Count; i++)
         {
             Debug.Log(soldierPositions[i].row + " " + soldierPositions[i].column);
