@@ -9,6 +9,7 @@ public class GameLoop: MonoBehaviour
     public int currentNurseToMove;
 
     public Action onNurseMoveComplete;
+    public static Action<Nurse> onNurseStepOnMine;
 
     private void Awake()
     {
@@ -33,6 +34,9 @@ public class GameLoop: MonoBehaviour
         // If the current moving nurse steps on a mine
         if (GameManager.instance.bf.CheckForMine(NurseManager.instance.nurses[currentNurseToMove].position))
         {
+            onNurseStepOnMine?.Invoke(NurseManager.instance.nurses[currentNurseToMove]);
+            
+            
             DeselectTheCurrentNurse();
         }
         

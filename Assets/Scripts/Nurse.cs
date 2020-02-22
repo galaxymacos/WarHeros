@@ -20,6 +20,7 @@ public class Nurse: MonoBehaviour
     public Skill skill;
     public int mobilityEachTurn;
     public int mobilityCounter = 0;
+    public int toughness;
     public bool canMove => mobilityCounter > 0;
     public bool canHeal => GameManager.instance.bf.IsThereSoldier(position);
 
