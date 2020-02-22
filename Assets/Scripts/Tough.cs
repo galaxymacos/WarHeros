@@ -9,7 +9,7 @@ namespace Assets.Scripts
         const int skillPointMax = 3;
         private void Start()
         {
-            skillName = "Solidité Fromagère";
+            skillName = "Solidité de la Fromagère";
             skillDescription = "Permet à l'infirmière de ne pas revenir à la tranchée lorsqu'elle déclenche une mine. 3 charges.";
             isSkillAvailable = true;
             skillPoint = 1;
@@ -30,11 +30,6 @@ namespace Assets.Scripts
             {
                 skillPoint++;
             }
-        }
-
-        public bool IsSkillAvailable()
-        {
-            return isSkillAvailable;
         }
     }
 }

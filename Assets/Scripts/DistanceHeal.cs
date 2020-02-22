@@ -31,10 +31,5 @@ namespace Assets.Scripts
                 skillPoint++;
             }
         }
-
-        public bool IsSkillAvailable()
-        {
-            return isSkillAvailable;
-        }
     }
 }

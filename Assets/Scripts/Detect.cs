@@ -10,7 +10,7 @@ namespace Assets.Scripts
         private void Start()
         {
             skillName = "Acuité visuelle";
-            skillDescription = "Permet à l'infirmière de détecter les mines autour d'elle .";
+            skillDescription = "Permet à l'infirmière de détecter toutes les mines autour d'elle dans un rayon de 1 case. 1 charge.";
             isSkillAvailable = true;
             skillPoint = 1;
         }
@@ -30,11 +30,6 @@ namespace Assets.Scripts
             {
                 skillPoint++;
             }
-        }
-
-        public bool IsSkillAvailable()
-        {
-            return isSkillAvailable;
         }
     }
 }
