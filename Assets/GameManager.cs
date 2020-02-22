@@ -47,6 +47,14 @@ public class GameManager : MonoBehaviour
         RegimenLives -= 1;
         CheckGameEndCondition();
     }
+
+    public void NurseDie()
+    {
+        NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].MoveNurseBackToTrench();
+        RegimenLives -= 1;
+        soldiersToSave += 1;
+        CheckGameEndCondition();
+    }
     
     
 

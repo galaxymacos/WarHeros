@@ -27,8 +27,6 @@ public class GameLoop: MonoBehaviour
         StartGame();
     }
     
-    
-
     public void NurseMoveComplete()
     {
         // If the current moving nurse steps on a mine
@@ -46,24 +44,33 @@ public class GameLoop: MonoBehaviour
         {
             DeselectTheCurrentNurse();
         }
+        
     }
 
     public void DeselectTheCurrentNurse()
     {
         currentNurseToMove = -1;
     }
-
-   
-
-    public void NextTurn()
+    public bool AreNursesFinishMovement()
     {
-        currentNurseToMove++;
-        if (currentNurseToMove >= NurseManager.instance.nurses.Count)
+        foreach (Nurse nurse in NurseManager.instance.nurses)
         {
-            currentNurseToMove = 0;
+            if (nurse.hasMobility)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+    public void NextRound()
+    {
+        foreach (Nurse nurse in NurseManager.instance.nurses)
+        {
+            nurse.ReplenishMobility();
         }
         
-        NurseManager.instance.nurses[currentNurseToMove].ReplenishMobility();
+        DeselectTheCurrentNurse();
     }
     
     

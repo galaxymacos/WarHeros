@@ -78,4 +78,9 @@ public class UIMessager: MonoBehaviour
     {
         return NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].mobilityCounter;
     }
+
+    public int GetTheCurrentNurseIndex()
+    {
+        return GameLoop.instance.currentNurseToMove;
+    }
 }
