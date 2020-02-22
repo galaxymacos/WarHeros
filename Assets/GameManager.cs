@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
+    public BattleField bf;
     private void Awake()
     {
         if(instance == null)
@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        BattleField bf = new BattleField();
+        bf = new BattleField();
     }
 
     // Update is called once per frame
