@@ -19,6 +19,7 @@ public class BattleField
         this.soldierCount = soldierCount;
         matrix = new char[depth, width];
         FillField(mineCount);
+        SpawnSoldiers(soldierCount);
     }
 
     public BattleField()
