@@ -85,7 +85,7 @@ public class GameLoop: MonoBehaviour
     public void StartGame()
     {
         print("Start the game");
-        DeselectTheCurrentNurse();
+        currentNurseToMove = -1;
     }
     
 }
