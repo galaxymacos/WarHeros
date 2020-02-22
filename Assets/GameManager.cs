@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public BattleField bf;
 
-    [SerializeField] private int RegimenLives = 3;
-    [SerializeField] private int soldiersToSave = 3;
+    [SerializeField] public int RegimenLives = 3;
+    [SerializeField] public int soldiersToSave = 3;
     
     
     

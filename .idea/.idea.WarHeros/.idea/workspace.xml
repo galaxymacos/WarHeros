@@ -6,7 +6,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIMessager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIMessager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +56,11 @@
         <option value="$PROJECT_DIR$/Assets/BattleField.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Detect.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GreenNurse.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UIMessager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" />
         <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UIMessager.cs" />
       </list>
     </option>
   </component>
@@ -112,7 +112,7 @@
       <updated>1582382093115</updated>
       <workItem from="1582382097160" duration="1952000" />
       <workItem from="1582386837636" duration="9816000" />
-      <workItem from="1582398260314" duration="8489000" />
+      <workItem from="1582398260314" duration="9775000" />
     </task>
     <servers />
   </component>
@@ -139,9 +139,9 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="277" y="74" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1582391678589" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1582399071478">
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1582407185107">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1582399071478" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1582407185107" />
   </component>
 </project>

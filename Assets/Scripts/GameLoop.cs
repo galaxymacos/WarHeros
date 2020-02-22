@@ -39,6 +39,8 @@ public class GameLoop: MonoBehaviour
             
             DeselectTheCurrentNurse();
         }
+
+        NurseManager.instance.nurses[currentNurseToMove].mobilityCounter -= 1;
         
         if (NurseManager.instance.nurses[currentNurseToMove].mobilityCounter == 0)
         {

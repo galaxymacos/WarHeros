@@ -90,16 +90,19 @@ public class Nurse: MonoBehaviour
         mobilityCounter = mobilityEachTurn;
     }
 
-    // public void CastSkill()
-    // {
-    //     // TODO skill 
-    //     // if ()
-    //     {
-    //     // mobilityCounter--;
-    //     // GameLoop.instance.onNurseMoveComplete?.Invoke();
-    //
-    //     // }
-    // }
+    public void CastSkill()
+    {
+        if (skill.IsSkillAvailable())
+        {
+            skill.Activate();
+        }
+        GameLoop.instance.onNurseMoveComplete?.Invoke();
+    }
+
+    public void MoveNurseBackToTrench()
+    {
+        position = GameManager.instance.bf.getTrenchPosition(0);    // TODO move to the near trench
+    }
 
 
 
