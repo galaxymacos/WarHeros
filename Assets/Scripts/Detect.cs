@@ -22,6 +22,7 @@ namespace Assets.Scripts
             {
                 isSkillAvailable = false;
             }
+            GameManager.instance.bf.GetMineArroundPosition(NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].position);
         }
 
         public override void Replenish()
