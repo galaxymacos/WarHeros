@@ -6,7 +6,7 @@ using UnityEngine;
 public class Nurse: MonoBehaviour
 {
     
-    private void Awake()
+    private void Start()
     {
         position = GameManager.instance.bf.getTrenchPosition(0);
         mobilityCounter = mobilityEachTurn;

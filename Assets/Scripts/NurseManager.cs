@@ -20,9 +20,14 @@ public class NurseManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        GameLoop.onNurseStepOnMine += TakeDamage;
     }
-    
+
+    private void Start()
+    {
+        GameLoop.onNurseStepOnMine += TakeDamage;
+
+    }
+
     public bool HasNurseInPosition(Position position)
     {
         foreach (Nurse nurse in nurses)

@@ -21,6 +21,7 @@ public class UIMessager: MonoBehaviour
     
     public void SelectNurse(int index)
     {
+        print($"Select nurse {index}");
         GameLoop.instance.currentNurseToMove = index;
         if (!NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].hasSpawned)
         {
@@ -36,21 +37,28 @@ public class UIMessager: MonoBehaviour
 
     public void MoveUp()
     {
+        print("Move up ");
         NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].Move(NurseMoveDirection.Up);
     }
 
     public void MoveDown()
     {
+        print("Move down ");
+
         NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].Move(NurseMoveDirection.Down);
     }
     
     public void MoveLeft()
     {
+        print("Move left ");
+
         NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].Move(NurseMoveDirection.Left);
     }
 
     public void MoveRight()
     {
+        print("Move right ");
+
         NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].Move(NurseMoveDirection.Right);
     }
 
