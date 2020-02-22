@@ -22,6 +22,7 @@ namespace Assets.Scripts
             {
                 isSkillAvailable = false;
             }
+            
         }
 
         public override void Replenish()

@@ -5,6 +5,8 @@ public class BattleField
 {
     //Random rnjesus;
 
+    public enum Entities { mine,soldier};
+
     char[,] matrix;
     const char MINECHAR = 'm';
     const char SOLDIERCHAR = 's';
@@ -45,7 +47,7 @@ public class BattleField
         {
             Debug.Log(m.column + "," + m.row);
         }
-        SpawnSoldiers(soldierCount);
+        SpawnEntities(soldierCount,Entities.soldier);
     }
 
     private void FillField(int mineCount)
@@ -199,16 +201,31 @@ public class BattleField
         return false;
     }
 
-    public void SpawnSoldiers(int amount)
+    public void SpawnEntities(int amount,Entities type)
     {
         for(int i=0;i<amount;i++)
         {
-            while (!SpawnSoldier()) ;
+            while (!SpawnEntity(type)) ;
         }
     }
 
-    private bool SpawnSoldier()
+    private bool SpawnEntity(Entities type)
     {
+        char ent = default;
+        switch(type)
+        {
+            case Entities.mine:
+                {
+                    ent = MINECHAR;
+                    break;
+                }
+            case Entities.soldier:
+                {
+                    ent = SOLDIERCHAR;
+                    break;
+                }
+        }
+
         int rand = Random.Range(0, depth * width);
         Position randPos = new Position(row: rand / width, column: rand % width);
         if(IsOccupied(randPos))
@@ -217,7 +234,7 @@ public class BattleField
         }
         else
         {
-            matrix[rand / width, rand % width] = SOLDIERCHAR;
+            matrix[rand / width, rand % width] = ent;
             return true;
         }
     }
@@ -260,6 +277,27 @@ public class BattleField
                 matrix[pos.row, pos.column] = default;
             }
         }
+    }
+
+    public Position GetRandomPosInBoard(bool hasToBeVacant)
+    {
+        Position nPos;
+        bool vacant = !hasToBeVacant;
+        do
+        {
+            nPos = GetRdmPos();
+            if(hasToBeVacant)
+            {
+                vacant = !IsOccupied(nPos);
+            }
+        }
+        while (!vacant);
+        return nPos;
+    }
+
+    private Position GetRdmPos()
+    {
+        return new Position(Random.Range(0, depth), Random.Range(0, width));
     }
 
     //public void PrintField()
