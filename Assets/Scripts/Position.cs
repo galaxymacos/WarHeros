@@ -8,5 +8,9 @@
     
     public int row;
     public int column;
-    
+
+    public string Convert()
+    {
+        return (char)(this.row + 65) + (this.column + 1).ToString();
+    }
 }

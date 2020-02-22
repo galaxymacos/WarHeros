@@ -18,11 +18,13 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+
+        DontDestroyOnLoad(this);
     }
     // Start is called before the first frame update
     void Start()
     {
-        bf = new BattleField();
+        bf = new BattleField(12,12,20,8);
     }
 
     public void NurseStepsOnMine()
