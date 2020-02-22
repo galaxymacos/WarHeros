@@ -6,6 +6,8 @@ public class NurseManager : MonoBehaviour
 {
     public Nurse redNurse;
     public Nurse greenNurse;
+    
+    
     // Start is called before the first frame update
     void Start()
     {

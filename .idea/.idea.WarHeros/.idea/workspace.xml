@@ -2,27 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4434f1d-edd1-472a-ba51-fb0ae74c6b7b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UIMessager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UIMessager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GreenNurse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GreenNurse.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Nurse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Nurse.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NurseManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NurseManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Position.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Position.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RedNurse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RedNurse.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneLoader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Skill.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Skill.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,8 +37,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GreenNurse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Nurse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Skill.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIMessager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -45,6 +55,8 @@
         <option value="$PROJECT_DIR$/Assets/Nurse.cs" />
         <option value="$PROJECT_DIR$/Assets/GreenNurse.cs" />
         <option value="$PROJECT_DIR$/Assets/RedNurse.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" />
       </list>
     </option>
@@ -96,7 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582382093115</updated>
       <workItem from="1582382097160" duration="1952000" />
-      <workItem from="1582386837636" duration="5525000" />
+      <workItem from="1582386837636" duration="9297000" />
     </task>
     <servers />
   </component>
@@ -123,9 +135,9 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="277" y="74" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1582391678589" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1582392300872">
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1582397077006">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1582392300872" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1582397077006" />
   </component>
 </project>

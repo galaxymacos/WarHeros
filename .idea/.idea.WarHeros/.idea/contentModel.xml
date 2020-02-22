@@ -9,6 +9,7 @@
         <e p="Scripts" t="Include">
           <e p="Defuse.cs" t="Include" />
           <e p="Detect.cs" t="Include" />
+          <e p="GameLoop.cs" t="Include" />
           <e p="GreenNurse.cs" t="Include" />
           <e p="Nurse.cs" t="Include" />
           <e p="NurseManager.cs" t="Include" />
@@ -16,6 +17,7 @@
           <e p="RedNurse.cs" t="Include" />
           <e p="SceneLoader.cs" t="Include" />
           <e p="Skill.cs" t="Include" />
+          <e p="UIMessager.cs" t="Include" />
         </e>
         <e p="SoldierLocations.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
