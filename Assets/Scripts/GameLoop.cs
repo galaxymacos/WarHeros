@@ -33,14 +33,21 @@ public class GameLoop: MonoBehaviour
         // If the current moving nurse steps on a mine
         if (GameManager.instance.bf.CheckForMine(NurseManager.instance.nurses[currentNurseToMove].position))
         {
-            NextTurn();
+            DeselectTheCurrentNurse();
         }
         
         if (NurseManager.instance.nurses[currentNurseToMove].mobilityCounter == 0)
         {
-            NextTurn();
+            DeselectTheCurrentNurse();
         }
     }
+
+    public void DeselectTheCurrentNurse()
+    {
+        currentNurseToMove = -1;
+    }
+
+   
 
     public void NextTurn()
     {
@@ -52,10 +59,12 @@ public class GameLoop: MonoBehaviour
         
         NurseManager.instance.nurses[currentNurseToMove].ReplenishMobility();
     }
+    
+    
 
     public void StartGame()
     {
-        currentNurseToMove = 0;
+        DeselectTheCurrentNurse();
     }
     
 }

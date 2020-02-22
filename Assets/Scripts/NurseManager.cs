@@ -7,8 +7,6 @@ public class NurseManager : MonoBehaviour
 {
     public List<Nurse> nurses;
 
-    
-
     public static NurseManager instance;
 
     private void Awake()
@@ -35,4 +33,5 @@ public class NurseManager : MonoBehaviour
 
         return false;
     }
+    
 }
