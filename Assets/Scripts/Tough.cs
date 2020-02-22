@@ -6,11 +6,11 @@ namespace Assets.Scripts
 {
     public class Tough : Skill
     {
-        const int skillPointMax = 3;
+        const int skillPointMax = 2;
         private void Start()
         {
             skillName = "Solidité de la Fromagère";
-            skillDescription = "Permet à l'infirmière de ne pas revenir à la tranchée lorsqu'elle déclenche une mine. 3 charges.";
+            skillDescription = "Permet à l'infirmière de ne pas revenir à la tranchée lorsqu'elle déclenche une mine. 2 charges.";
             isSkillAvailable = true;
             skillPoint = 1;
         }
@@ -22,7 +22,7 @@ namespace Assets.Scripts
             {
                 isSkillAvailable = false;
             }
-
+            //TODO 
         }
 
         public override void Replenish()
