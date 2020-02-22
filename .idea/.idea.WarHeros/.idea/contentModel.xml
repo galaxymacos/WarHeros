@@ -22,6 +22,7 @@
           <e p="SceneLoader.cs" t="Include" />
           <e p="Skill.cs" t="Include" />
           <e p="Tough.cs" t="Include" />
+          <e p="ToughNurse.cs" t="Include" />
           <e p="UIMessager.cs" t="Include" />
         </e>
         <e p="SoldierLocations.cs" t="Include" />

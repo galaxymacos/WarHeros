@@ -22,6 +22,16 @@ public class UIMessager: MonoBehaviour
     public void SelectNurse(int index)
     {
         GameLoop.instance.currentNurseToMove = index;
+        if (!NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].hasSpawned)
+        {
+            // Open the panel for spawning the nurse
+        }
+    }
+
+    public void SpawnCurrentNurseTo(int columnIndex)
+    {
+        NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].hasSpawned = true;
+        NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].SetBirthLocation(columnIndex);
     }
 
     public void MoveUp()

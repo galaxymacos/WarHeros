@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4434f1d-edd1-472a-ba51-fb0ae74c6b7b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ToughNurse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ToughNurse.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIMessager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIMessager.cs" afterDir="false" />
@@ -35,6 +39,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIMessager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ToughNurse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/BattleField.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Nurse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Detect.cs" root0="FORCE_HIGHLIGHTING" />
@@ -53,11 +58,11 @@
         <option value="$PROJECT_DIR$/Assets/RedNurse.cs" />
         <option value="$PROJECT_DIR$/Assets/BattleField.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Detect.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GreenNurse.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" />
         <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UIMessager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GreenNurse.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UIMessager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" />
       </list>
     </option>
@@ -110,7 +115,7 @@
       <updated>1582382093115</updated>
       <workItem from="1582382097160" duration="1952000" />
       <workItem from="1582386837636" duration="9816000" />
-      <workItem from="1582398260314" duration="10970000" />
+      <workItem from="1582398260314" duration="12509000" />
     </task>
     <servers />
   </component>
@@ -137,9 +142,9 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="277" y="74" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1582391678589" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1582407185107">
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1582410218215">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1582407185107" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1582410218215" />
   </component>
 </project>

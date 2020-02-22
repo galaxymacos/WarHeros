@@ -44,11 +44,18 @@ public class GameLoop: MonoBehaviour
         {
             DeselectTheCurrentNurse();
         }
+
+
+        if (AreNursesFinishMovement())
+        {
+            NextRound();
+        }
         
     }
 
     public void DeselectTheCurrentNurse()
     {
+        NurseManager.instance.nurses[currentNurseToMove].mobilityCounter = 0;
         currentNurseToMove = -1;
     }
     public bool AreNursesFinishMovement()
@@ -77,6 +84,7 @@ public class GameLoop: MonoBehaviour
 
     public void StartGame()
     {
+        print("Start the game");
         DeselectTheCurrentNurse();
     }
     
