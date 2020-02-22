@@ -4,6 +4,72 @@ using UnityEngine;
 
 public class Events : MonoBehaviour
 {
+    int[] events;
+    int index = 0;
+    private void Start()
+    {
+        events = new int[28];
+
+        for (int i = 0; i < events.Length; i++)
+        {
+            if (i < 4)
+            {
+                events[i] = 0;
+            }
+
+            else if (i < 12)
+            {
+                events[i] = 1;
+            }
+
+            else if (i < 20)
+            {
+                events[i] = 2;
+            }
+
+            else
+            {
+                events[i] = 3;
+            }
+        }
+
+        for (int i = 0; i < events.Length - 1; i++)
+        {
+            int r = Random.Range(i, events.Length);
+            //switch r and i
+            int temp = events[i];
+            events[i] = events[r];
+            events[r] = temp;
+        }
+    }
+    public void SelectRandomFunction()
+    {
+        if (index < events.Length)
+        {
+            switch (events[index++])
+            {
+                case 0:
+                    SpawnSoldier();
+                    break;
+                case 1:
+                    SpawnMine();
+                    break;
+                case 2:
+                    HailOfBullets();
+                    break;
+                case 3:
+                default:
+                    ArtilleryStrike();
+                    break;
+            }
+        }
+
+        else
+        {
+            ArtilleryStrike();
+        }
+    }
+
     void ArtilleryStrike()
     {
         //get random position and detect mines around the position
