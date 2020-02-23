@@ -6,6 +6,16 @@ public class Events : MonoBehaviour
 {
     int[] events;
     int index = 0;
+
+    public static Events instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     private void Start()
     {
         events = new int[28];
