@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RegimenLives: 3
-  soldiersToSave: 1
+  soldiersToSave: 3
 --- !u!4 &86847994
 Transform:
   m_ObjectHideFlags: 0

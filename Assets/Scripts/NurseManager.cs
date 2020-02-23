@@ -54,6 +54,16 @@ public class NurseManager : MonoBehaviour
 
         return nursesInTargetPosition;
     }
+    
+    public List<Nurse> GetNursesInPosition(List<Position> positions)
+    {
+        List<Nurse> nursesInTargetPositions = new List<Nurse>();
+        foreach (Position position in positions)
+        {
+            nursesInTargetPositions.AddRange(GetNursesInPosition(position));
+        }
+        return nursesInTargetPositions;
+    }
 
     public void TakeDamage(Nurse nurse)
     {
