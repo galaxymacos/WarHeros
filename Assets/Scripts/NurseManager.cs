@@ -76,7 +76,7 @@ public class NurseManager : MonoBehaviour
         else
         {
             GameManager.instance.NurseStepsOnMine();
-            nurses[GameLoop.instance.currentNurseToMove].MoveNurseBackToTrench();
+            nurse.MoveNurseBackToTrench();
             ExplodeTheMineBeingStepedOn();
             GameLoop.instance.DeselectTheCurrentNurse();
 
