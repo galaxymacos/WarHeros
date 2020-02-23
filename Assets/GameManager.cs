@@ -20,12 +20,9 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this);
+        bf = new BattleField(12,12,0,8);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        bf = new BattleField(12,12,20,8);
-    }
+
 
     public void NurseStepsOnMine()
     {

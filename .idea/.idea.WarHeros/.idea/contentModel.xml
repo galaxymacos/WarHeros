@@ -24,6 +24,7 @@
           <e p="RedNurse.cs" t="Include" />
           <e p="SceneLoader.cs" t="Include" />
           <e p="Skill.cs" t="Include" />
+          <e p="TouchNurse.cs" t="Include" />
           <e p="Tough.cs" t="Include" />
           <e p="ToughNurse.cs" t="Include" />
           <e p="UIMessager.cs" t="Include" />
@@ -57,6 +58,7 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="UiManager.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
