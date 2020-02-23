@@ -346,11 +346,24 @@ public class BattleField
         {
             return false;
         }
-        else
+
+
+        bool isOk = true;
+
+        foreach(var n in NurseManager.instance.nurses)
         {
+            if(n.position.column==randPos.column&&n.position.row==randPos.row)
+            {
+                isOk = false;
+            }
+        }
+        if(isOk)
+        {
+
             matrix[rand / width, rand % width] = ent;
             return true;
         }
+        return false;
     }
 
     private bool IsOccupied(Position pos)
