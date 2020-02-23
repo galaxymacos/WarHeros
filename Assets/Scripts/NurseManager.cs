@@ -88,9 +88,11 @@ public class NurseManager : MonoBehaviour
             nurse.toughness--;       
             GameManager.instance.NurseStepsOnMineWithToughness();
             GameManager.instance.bf.Demine(nursePosBeforeHit);
+            MessageSystem.instance.Print("Ouch!");
         }
         else
         {
+            MessageSystem.instance.Print("Sorry team :(");
             GameManager.instance.NurseStepsOnMine();
             nurse.MoveNurseBackToTrench();
             GameManager.instance.bf.Demine(nursePosBeforeHit);
