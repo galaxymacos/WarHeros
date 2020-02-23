@@ -15,7 +15,7 @@ public class SoldierLocations : MonoBehaviour
 
         for (int i = 0; i <soldierPositions.Count; i++)
         {
-            Debug.Log(soldierPositions[i].row + " " + soldierPositions[i].column);
+          //  Debug.Log(soldierPositions[i].row + " " + soldierPositions[i].column);
             frames[i].GetComponentInChildren<Text>().text = soldierPositions[i].Convert();
         }
     }
