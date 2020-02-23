@@ -52,7 +52,11 @@ public class Nurse: MonoBehaviour
             GameManager.instance.bf.RemoveSoldier(checkPosition);
             // Gain a point for healing a soldier
             GameManager.instance.GainPointForHealingSoldiers();
-            skill.Replenish();
+            if (skill != null)
+            {
+                skill.Replenish();
+                
+            }
             GameLoop.instance.onNurseMoveComplete?.Invoke();
         }
     }

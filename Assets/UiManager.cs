@@ -117,6 +117,7 @@ public class UiManager : MonoBehaviour
 
         if (NurseManager.instance.nurses.Count < 3)
         {
+   
             thirdNurseButton.SetActive(false);
         }
         else
@@ -135,16 +136,17 @@ public class UiManager : MonoBehaviour
         if (NurseManager.instance.nurses.Count < 4)
         {
             fourthNurseButton.SetActive(false);
+            print("disable");
         }
         else
         {
             if (NurseManager.instance.nurses[3].mobilityCounter == 0)
             {
-                thirdNurseButton.SetActive(false);
+                fourthNurseButton.SetActive(false);
             }
             else
             {
-                thirdNurseButton.SetActive(true);
+                fourthNurseButton.SetActive(true);
             }
         }
         
