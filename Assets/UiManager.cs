@@ -21,7 +21,6 @@ public class UiManager : MonoBehaviour
     public GameObject topButton;
     public GameObject rightButton;
     public GameObject downButton;
-    // public GameObject skillButton;
 
     public static UiManager instance;
 
@@ -55,7 +54,7 @@ public class UiManager : MonoBehaviour
     {
         if (GameLoop.instance.currentNurseToMove != -1)
         {
-            nursePortray.sprite = NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].sprite;
+            //nursePortray.sprite = NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].sprite;
             mobilityPointText.text = NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].mobilityCounter
                 .ToString();
 
@@ -79,21 +78,10 @@ public class UiManager : MonoBehaviour
         if (GameLoop.instance.currentNurseToMove == -1)
         {
             currentNursePanel.SetActive(false);
-            // skillButton.SetActive(false);
-            
         }
         else
         {
             currentNursePanel.SetActive(true);
-
-            // if (NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].skill.IsSkillAvailable())
-            // {
-            //     skillButton.SetActive(true);
-            // }
-            // else
-            // {
-            //     skillButton.SetActive(false);
-            // }
         }
 
         if (GameLoop.instance.currentNurseToMove != -1)
@@ -147,9 +135,13 @@ public class UiManager : MonoBehaviour
 
     public void UpdateLocationText(Position position)
     {
-        locationText.text = Utility.NumberToChar(position.row) + " " + position.column;
+        locationText.text = NumberToChar(position.row) + " " + position.column;
     }
 
 
-     
+     public char NumberToChar(int positionIndex)
+     {
+         int difference = 'A' - 0;
+         return (char)(positionIndex + difference);
+     }
 }
