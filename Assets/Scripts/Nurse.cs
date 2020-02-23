@@ -24,10 +24,13 @@ public class Nurse: MonoBehaviour
     public bool hasMobility => mobilityCounter > 0;
     public bool canHeal => GameManager.instance.bf.IsThereSoldier(position);
 
-    public bool hasSpawned;
+    public bool hasSpawned => position.column >= 0;
 
+    private void Awake()
+    {
+        position = new Position(-1,-1);
+    }
 
-    
     // Heal the soldider in the nurse's position
     public void Heal()
     {
@@ -52,7 +55,7 @@ public class Nurse: MonoBehaviour
 
     public void SetBirthLocation(int columnIndex)
     {
-        hasSpawned = true;
+        print("give birth to the player");
         position = new Position(0, columnIndex);
     }
 

@@ -48,7 +48,6 @@ public class UIMessager: MonoBehaviour
 
     public void SpawnCurrentNurseTo(int columnIndex)
     {
-        NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].hasSpawned = true;
         NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].SetBirthLocation(columnIndex);
         print("Spawn current nurse to the column "+columnIndex);
     }
