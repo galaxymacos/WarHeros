@@ -41,6 +41,20 @@ public class NurseManager : MonoBehaviour
         return false;
     }
 
+    public List<Nurse> GetNursesInPosition(Position position)
+    {
+        List<Nurse> nursesInTargetPosition = new List<Nurse>();
+        foreach (Nurse nurse in nurses)
+        {
+            if (nurse.position.column == position.column && nurse.position.row == position.row)
+            {
+                nursesInTargetPosition.Add(nurse);
+            }
+        }
+
+        return nursesInTargetPosition;
+    }
+
     public void TakeDamage(Nurse nurse)
     {
         if (nurse.toughness > 0)
@@ -57,9 +71,6 @@ public class NurseManager : MonoBehaviour
             GameLoop.instance.DeselectTheCurrentNurse();
 
         }
-        
-       
-        
     }
 
     public void ExplodeTheMineBeingStepedOn()

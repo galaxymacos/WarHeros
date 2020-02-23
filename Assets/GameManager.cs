@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     {
         NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].MoveNurseBackToTrench();
         RegimenLives -= 1;
-        soldiersToSave += 1;
+        // soldiersToSave += 1;    TODO Don't increase the regiment when stepping on the mine to decrease the diffculty
         CheckGameEndCondition();
     }
     

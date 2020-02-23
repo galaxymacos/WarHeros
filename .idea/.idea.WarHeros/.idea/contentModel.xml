@@ -11,6 +11,7 @@
           <e p="NurseScene.cs" t="Include" />
         </e>
         <e p="GameManager.cs" t="Include" />
+        <e p="MessageSystem.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="BattleField.cs" t="Include" />
           <e p="Defuse.cs" t="Include" />
