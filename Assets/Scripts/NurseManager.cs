@@ -9,6 +9,9 @@ public class NurseManager : MonoBehaviour
 
     public static NurseManager instance;
 
+    public GameObject explosion;
+    public Transform explosePosition;
+
     private void Awake()
     {
         if (instance == null)
@@ -81,6 +84,8 @@ public class NurseManager : MonoBehaviour
             GameLoop.instance.DeselectTheCurrentNurse();
 
         }
+        Debug.Log("E");
+        Instantiate(explosion, explosePosition);
     }
 
     public void ExplodeTheMineBeingStepedOn(Nurse nurse)
