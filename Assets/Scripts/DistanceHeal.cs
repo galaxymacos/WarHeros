@@ -22,7 +22,7 @@ namespace Assets.Scripts
             {
                 isSkillAvailable = false;
             }
-            
+            //TODO : implement a distance heal method in the nurses' heal
         }
 
         public override void Replenish()

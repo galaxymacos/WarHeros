@@ -7,8 +7,6 @@ public class NurseManager : MonoBehaviour
 {
     public List<Nurse> nurses;
 
-    
-
     public static NurseManager instance;
 
     private void Awake()
@@ -21,8 +19,15 @@ public class NurseManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
-    
+
+    private void Start()
+    {
+        GameLoop.onNurseStepOnMine += TakeDamage;
+
+    }
+
     public bool HasNurseInPosition(Position position)
     {
         foreach (Nurse nurse in nurses)
@@ -35,4 +40,23 @@ public class NurseManager : MonoBehaviour
 
         return false;
     }
+
+    public void TakeDamage(Nurse nurse)
+    {
+        if (nurse.toughness > 0)
+        {
+            nurse.toughness--;       
+            GameManager.instance.NurseStepsOnMineWithToughness();
+        }
+        else
+        {
+            GameManager.instance.NurseStepsOnMine();
+        }
+        
+        // Move the player back to trench
+        print("Move the player back to trench because he steps on a mine");
+        nurses[GameLoop.instance.currentNurseToMove].MoveNurseBackToTrench();
+        
+    }
+    
 }

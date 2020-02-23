@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public BattleField bf;
 
-    public int RegimenLives = 3;
-    public int soldiersToSave = 3;
+    [SerializeField] public int RegimenLives = 3;
+    [SerializeField] public int soldiersToSave = 3;
     
     
     
@@ -20,18 +20,42 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this);
+        bf = new BattleField(12,12,0,8);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        bf = new BattleField(12,12,20,8);
-    }
+
 
     public void NurseStepsOnMine()
     {
         RegimenLives -= 1;
         soldiersToSave += 1;
+        CheckGameEndCondition();
+
     }
+
+    public void NurseStepsOnMineWithToughness()
+    {
+        RegimenLives -= 1;
+        CheckGameEndCondition();
+
+    }
+
+    public void SoldierDie()
+    {
+        RegimenLives -= 1;
+        CheckGameEndCondition();
+    }
+
+    public void NurseDie()
+    {
+        NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].MoveNurseBackToTrench();
+        RegimenLives -= 1;
+        soldiersToSave += 1;
+        CheckGameEndCondition();
+    }
+    
+    
+
+
 
     public void CheckGameEndCondition()
     {
