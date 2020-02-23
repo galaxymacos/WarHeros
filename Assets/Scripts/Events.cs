@@ -50,16 +50,20 @@ public class Events : MonoBehaviour
             {
                 case 0:
                     SpawnSoldier();
+                    Debug.Log("Spawn Soldier");
                     break;
                 case 1:
                     SpawnMine();
+                    Debug.Log("Spawn Mine");
                     break;
                 case 2:
                     HailOfBullets();
+                    Debug.Log("Hail of Bullets");
                     break;
                 case 3:
                 default:
                     ArtilleryStrike();
+                    Debug.Log("Artillery Strike");
                     break;
             }
         }
