@@ -885,6 +885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1265808000}
   - component: {fileID: 1265808001}
+  - component: {fileID: 1265808002}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -920,6 +921,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RegimenLives: 3
   soldiersToSave: 3
+--- !u!114 &1265808002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265807999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ab8d708f9c4b7f8a37c4bf8881fd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentNurseToMove: 0
 --- !u!1 &1983780524
 GameObject:
   m_ObjectHideFlags: 0
