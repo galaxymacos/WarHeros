@@ -524,7 +524,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: SetIndex
+        m_MethodName: SelectNurse
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1004,7 +1004,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: SetIndex
+        m_MethodName: SelectNurse
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1968,7 +1968,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: SetIndex
+        m_MethodName: SelectNurse
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2379,7 +2379,7 @@ GameObject:
   - component: {fileID: 929793104257638044}
   - component: {fileID: 929793104257638047}
   - component: {fileID: 929793104257638046}
-  - component: {fileID: 929793104257638018}
+  - component: {fileID: 1321839798}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2474,7 +2474,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &929793104257638018
+--- !u!114 &1321839798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2483,15 +2483,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 929793104257638041}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7c13c7af7ef8a04790549b912d21e60, type: 3}
+  m_Script: {fileID: 11500000, guid: a01437d979f03c4429b374733ccf2855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nurseImage: {fileID: 0}
-  nIndex: 0
-  nurseImage1: {fileID: 0}
-  nurseImage2: {fileID: 0}
-  nurseImage3: {fileID: 0}
-  nurseImage4: {fileID: 0}
+  nursePortray: {fileID: 929793102561753583}
+  mobilityPointText: {fileID: 929793104297914298}
+  locationText: {fileID: 929793103841282495}
+  soldiersAliveText: {fileID: 929793102603143249}
+  RegementLeftText: {fileID: 929793103664521769}
+  currentNursePanel: {fileID: 929793102557260824}
+  leftButton: {fileID: 929793103301777255}
+  topButton: {fileID: 929793104522048473}
+  rightButton: {fileID: 929793104362968551}
+  downButton: {fileID: 929793102802591273}
 --- !u!1 &929793104273870656
 GameObject:
   m_ObjectHideFlags: 0
@@ -2761,7 +2765,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: SetIndex
+        m_MethodName: SelectNurse
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3079,7 +3083,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 929793104419114373}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: CastSkill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &929793104522048473
 GameObject:
   m_ObjectHideFlags: 0

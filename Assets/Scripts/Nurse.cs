@@ -28,7 +28,14 @@ public class Nurse: MonoBehaviour
 
     private void Awake()
     {
+        // Initialize the position to the trench
         position = new Position(-1,-1);
+        
+        // set the skill's owner to itself
+        if (skill != null)
+        {
+            skill.owner = this;
+        }
     }
 
     // Heal the soldider in the nurse's position

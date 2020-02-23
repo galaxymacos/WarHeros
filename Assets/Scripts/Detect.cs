@@ -23,7 +23,21 @@ namespace Assets.Scripts
                 isSkillAvailable = false;
             }
             List<Position> positions = new List<Position>();
-            positions = GameManager.instance.bf.GetMineArroundPosition(NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].position);
+            Position reversePosition =new Position(NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].position.column, NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].position.row);
+            positions = GameManager.instance.bf.GetMineArroundPosition(reversePosition);
+            if (positions.Count == 0)
+            {
+                print($"There is no mine near {Utility.NumberToChar(owner.position.row)}{owner.position.column}");
+            }
+            else
+            {
+                print("There are mines at the follow locations");
+                foreach (Position position in positions)
+                {
+                    print($"{Utility.NumberToChar(position.row)}{position.column}");
+                }
+            }
+            
         }
 
         public override void Replenish()
