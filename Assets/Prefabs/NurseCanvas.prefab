@@ -3251,6 +3251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5729604810975245056}
+  - component: {fileID: 5927222881577241890}
   m_Layer: 0
   m_Name: NursesList
   m_TagString: Untagged
@@ -3281,3 +3282,15 @@ RectTransform:
   m_AnchoredPosition: {x: 200, y: 70}
   m_SizeDelta: {x: 800, y: 800}
   m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &5927222881577241890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5156894014705329088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd79e2673a064b9d808c1c88ad352fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
