@@ -18,81 +18,79 @@ public class Events : MonoBehaviour
 
     private void Start()
     {
-        //events = new int[32];
+        events = new int[32];
 
-        //for (int i = 0; i < events.Length; i++)
-        //{
-        //    if (i < 4)
-        //    {
-        //        events[i] = 0;
-        //    }
+        for (int i = 0; i < events.Length; i++)
+        {
+            if (i < 4)
+            {
+                events[i] = 0;
+            }
 
-        //    else if (i < 12)
-        //    {
-        //        events[i] = 1;
-        //    }
+            else if (i < 12)
+            {
+                events[i] = 1;
+            }
 
-        //    else if (i < 20)
-        //    {
-        //        events[i] = 2;
-        //    }
+            else if (i < 20)
+            {
+                events[i] = 2;
+            }
 
-        //    else if (i < 28)
-        //    {
-        //        events[i] = 3;
-        //    }
+            else if (i < 28)
+            {
+                events[i] = 3;
+            }
 
-        //    else
-        //    {
-        //        events[i] = 4;
-        //    }
-        //}
+            else
+            {
+                events[i] = 4;
+            }
+        }
 
-        //for (int i = 0; i < events.Length - 1; i++)
-        //{
-        //    int r = Random.Range(i, events.Length);
-        //    //switch r and i
-        //    int temp = events[i];
-        //    events[i] = events[r];
-        //    events[r] = temp;
-        //}
+        for (int i = 0; i < events.Length - 1; i++)
+        {
+            int r = Random.Range(i, events.Length);
+            //switch r and i
+            int temp = events[i];
+            events[i] = events[r];
+            events[r] = temp;
+        }
     }
     public void SelectRandomFunction()
     {
-        //if (index < events.Length - 1)
-        //{
-        //    switch (events[index++])
-        //    {
-        //        case 0:
-        //            SpawnSoldier();
-        //            Debug.Log("Soldier");
-        //            break;
-        //        case 1:
-        //            SpawnMine();
-        //            Debug.Log("Mine");
-        //            break;
-        //        case 2:
-        //            HailOfBullets();
-        //            Debug.Log("Bullets");
-        //            break;
-        //        case 3:
-        //        default:
-        //            ArtilleryStrike();
-        //            Debug.Log("Artillery");
-        //            break;
-        //        case 4:
-        //            CarePackage();
-        //            Debug.Log("Care Package");
-        //            break;
-        //    }
-        //}
+        if (index < events.Length - 1)
+        {
+            switch (events[index++])
+            {
+                case 0:
+                    SpawnSoldier();
+                    Debug.Log("Soldier");
+                    break;
+                case 1:
+                    SpawnMine();
+                    Debug.Log("Mine");
+                    break;
+                case 2:
+                    HailOfBullets();
+                    Debug.Log("Bullets");
+                    break;
+                case 3:
+                default:
+                    ArtilleryStrike();
+                    Debug.Log("Artillery");
+                    break;
+                case 4:
+                    CarePackage();
+                    Debug.Log("Care Package");
+                    break;
+            }
+        }
 
-        //else
-        //{
-        //    ArtilleryStrike();
-        //}
-
-        CarePackage();
+        else
+        {
+            ArtilleryStrike();
+        }
 
     }
 
