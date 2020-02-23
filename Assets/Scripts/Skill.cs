@@ -12,6 +12,7 @@ public class Skill : MonoBehaviour
 
     public virtual void Activate()
     {
+        print("abstract method activate");
     }
 
     public virtual void Replenish()

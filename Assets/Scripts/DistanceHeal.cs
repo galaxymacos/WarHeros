@@ -20,19 +20,26 @@ namespace Assets.Scripts
 
         public override void Activate()
         {
+            print("minus a skill point");
             skillPoint--;
             if (skillPoint == 0)
             {
+                print("no more skill points");
                 isSkillAvailable = false;
             }
+            print("try to activate distance heal panel");
             distanceHealPanel.ActivatePanel();
         }
 
         public override void Replenish()
         {
+            print("In the replenish method");
+
             if (skillPoint < skillPointMax && skillPoint >= 0)
             {
+                print("has been replenished");
                 skillPoint++;
+                isSkillAvailable = true;
             }
         }
     }
