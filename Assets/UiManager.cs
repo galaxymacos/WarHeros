@@ -54,7 +54,7 @@ public class UiManager : MonoBehaviour
     {
         if (GameLoop.instance.currentNurseToMove != -1)
         {
-            nursePortray.sprite = NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].sprite;
+            //nursePortray.sprite = NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].sprite;
             mobilityPointText.text = NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].mobilityCounter
                 .ToString();
 
