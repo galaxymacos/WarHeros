@@ -9,10 +9,11 @@ public class DistanceHealPanel : MonoBehaviour
     [SerializeField] Button[] matrixButtons;
     //sprite for the soldier
     [SerializeField] Sprite soldierSprite;
-        List<Position> toCheck = new List<Position>();
+    List<Position> toCheck = new List<Position>();
 
     public void ActivatePanel()
     {
+        gameObject.SetActive(true);
         //TODO : implement a distance heal method in the nurses' heal
         Position pos = NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].position;
         //change images accordingly
@@ -33,7 +34,7 @@ public class DistanceHealPanel : MonoBehaviour
         {
             toCheck[i] = new Position(toCheck[i].column, toCheck[i].row);
             // tocheck[i] == 0 means that it returns a soldier
-            if (GameManager.instance.bf.AdvencedCheckForMine(toCheck[i]) == 0)
+            if (GameManager.instance.bf.AdvencedCheckForMine(toCheck[i]) == 2)
             {
                 //change the image and activate the button
                 matrixButtons[i].gameObject.SetActive(true);
@@ -45,8 +46,19 @@ public class DistanceHealPanel : MonoBehaviour
     public void HealSoldier(int positionInt)
     {
         /*positionInt is a range of 0 to 8 (1 to 9) to know which button was pressed (0 is top left button, 8 is bottom right)*/
-        //NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].Heal();
         Position pos = new Position(toCheck[positionInt].row, toCheck[positionInt].column);
         //then, use the newly created position to heal the soldier
+        NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].Heal(pos);
+        DeactivatePanel();
+    }
+
+    private void DeactivatePanel()
+    {
+        toCheck.Clear();
+        foreach(var item in matrixButtons)
+        {
+            item.image.sprite = null;
+        }
+        gameObject.SetActive(false);
     }
 }

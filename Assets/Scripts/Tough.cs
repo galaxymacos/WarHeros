@@ -27,10 +27,19 @@ namespace Assets.Scripts
 
         public override void Replenish()
         {
+            print("In the replenish method");
+
             if (skillPoint < skillPointMax && skillPoint >= 0)
             {
+                print("has been replenished");
                 skillPoint++;
+                isSkillAvailable = true;
             }
+        }
+
+        public int RemainingSkillPoints()
+        {
+            return skillPoint;
         }
     }
 }

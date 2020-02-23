@@ -29,15 +29,18 @@ public class BattleField
     {
         //number of mine to place in each row
         var countAtRow = new int[depth];
-        var mineAtRow = new int[depth];
         //select wich row the mines go in
+            int test = 0;
         for (int i = 0; i < soldierCount; i++)
         {
+        var mineAtRow = new int[depth];
+            Debug.Log(i + " soldiers");
             //use for random
             int weight = 0;
             //chance for a row to get picked
             var weigthAtRow = new int[depth];
             //calculate chances for every row
+        ///////
             for (int r = 0; r < countAtRow.Length; r++)
             {
                 //use the square of the row so there is more chance of higher row to get pick
@@ -45,14 +48,14 @@ public class BattleField
 
                 for (int j = 0; j < width; j++)
                 {
-                    if (IsOccupied(new Position(i, j)))
+                    if (IsOccupied(new Position(r, j)))
                     {
                         mineAtRow[r]++;
                     }
                 }
 
-
-                weigthAtRow[r] = (int)(Mathf.Sqrt((r + 1)) * (width - mineAtRow[r]));
+                Debug.Log("+++"+(width - mineAtRow[r]- countAtRow[r]));
+                weigthAtRow[r] = (int)(Mathf.Sqrt((r + 1)) * (width - mineAtRow[r]-countAtRow[r]));
             }
             //add the weight of every row for the random
             //Console.WriteLine("countarow"+countAtRow.Length);
@@ -68,17 +71,22 @@ public class BattleField
             for (int j = 0, cumulativeWeight = 0; j < depth; j++)
             {
                 cumulativeWeight += weigthAtRow[j];
+                Debug.Log("rand: " + rand + " cum w: " + cumulativeWeight);
                 if (rand < cumulativeWeight)
                 {
                     //if you place a mine you are done
                     countAtRow[j]++;
+                    test++;
                     break;
                 }
             }
         }
+        ///////
+            //Debug.Log("----" + test);
         //for each row
         for (int i = 0; i < depth; i++)
         {
+           // Debug.Log("//"+countAtRow[i]);
             List<int> newList = new List<int>();
             //int[] newArray = new int[width - mineAtRow[i]];
             for (int j = 0; j < width; j++)
@@ -88,10 +96,12 @@ public class BattleField
                     newList.Add(j);
                 }
             }
+
             int[] row = FisherYale(newList.ToArray());
             for (int j = 0; j < countAtRow[i]; j++)
             {
                 matrix[i, row[j]] = SOLDIERCHAR;
+                //Debug.Log("//" + i + " , " + row[j]);
             }
         }
 
@@ -104,7 +114,7 @@ public class BattleField
         depth = 6;
         matrix[0, 0] = MINECHAR;
         matrix[0, 1] = MINECHAR;
-        matrix[5, 5] = SOLDIERCHAR;
+        matrix[0, 5] = SOLDIERCHAR;
 
         Debug.Log(CheckForMine(new Position(0, 0)));
         Debug.Log(CheckForMine(new Position(1, 0)));
@@ -256,6 +266,10 @@ public class BattleField
         else if (matrix[pos.row, pos.column] == MINECHAR)
         {
             return 1;
+        }
+        else if (matrix[pos.row, pos.column] == SOLDIERCHAR)
+        {
+            return 2;
         }
         return 0;
     }

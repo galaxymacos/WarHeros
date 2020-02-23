@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2af03e17-37e9-4689-ab23-d65496ca97cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Game Jam/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game Jam/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Game Jam/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game Jam/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Game Jam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game Jam/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UiManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UiManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +34,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Nurse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIMessager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Defuse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Detect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UiManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleField.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Skill.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RedNurse.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -52,9 +54,13 @@
         <option value="$PROJECT_DIR$/Assets/InputData.cs" />
         <option value="$PROJECT_DIR$/Assets/NurseType.cs" />
         <option value="$PROJECT_DIR$/Assets/NurseSelectionPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Detect.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BattleField.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" />
+        <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/UiManager.cs" />
       </list>
     </option>
   </component>
@@ -97,7 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582348808263</updated>
       <workItem from="1582348811938" duration="7074000" />
-      <workItem from="1582463849639" duration="701000" />
+      <workItem from="1582463849639" duration="4418000" />
     </task>
     <servers />
   </component>
@@ -112,10 +118,11 @@
     </state>
     <state x="-1916" y="182" key="RiderGenerateDialog/-2560.0.1707.960/0.0.1707.960@-2560.0.1707.960" timestamp="1582354313207" />
     <state x="644" y="182" key="RiderGenerateDialog/-2560.0.1707.960/0.0.1707.960@0.0.1707.960" timestamp="1582351717879" />
-    <state x="-2044" y="205" width="672" height="678" key="search.everywhere.popup" timestamp="1582464368837">
-      <screen x="-2560" y="0" width="1707" height="960" />
+    <state x="-2044" y="196" width="672" height="650" key="search.everywhere.popup" timestamp="1582467948401">
+      <screen x="-2560" y="0" width="1707" height="920" />
     </state>
-    <state x="-2044" y="205" width="672" height="678" key="search.everywhere.popup/-2560.0.1707.960/0.0.1707.960@-2560.0.1707.960" timestamp="1582464368837" />
+    <state x="-2044" y="196" width="672" height="650" key="search.everywhere.popup/-2560.0.1707.920/0.0.1707.920@-2560.0.1707.920" timestamp="1582467948401" />
+    <state x="-2044" y="205" width="672" height="678" key="search.everywhere.popup/-2560.0.1707.960/0.0.1707.960@-2560.0.1707.960" timestamp="1582464934800" />
     <state x="516" y="205" key="search.everywhere.popup/-2560.0.1707.960/0.0.1707.960@0.0.1707.960" timestamp="1582349835672" />
   </component>
 </project>
