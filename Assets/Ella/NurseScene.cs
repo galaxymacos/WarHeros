@@ -19,24 +19,21 @@ public class NurseScene : MonoBehaviour
     [SerializeField] Sprite nurseImage3;
     [SerializeField] Sprite nurseImage4;
 
+    Animator animator;
 
     UIMessager uiMessager;
     // Start is called before the first frame update
     void Awake()
     {
         positionTxt = GameObject.Find("LocationTxt").GetComponent<Text>();
-        //position = GetComponent<Position>();
         uiMessager = GetComponent<UIMessager>();
         positionTxt.text = "A1";
-        //nursePoetry = GameObject.Find("NursePoetry").GetComponent<Sprite>();
-        //nurseImage = GameObject.Find("NursePoetry").GetComponent<Image>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //positionTxt.text = position.Convert();
-        //nursePoetry = ChangePoetry();
         nurseImage.sprite = ChangePoetry();
         positionTxt.text = "A1";
         Debug.Log("Hello");
@@ -49,26 +46,28 @@ public class NurseScene : MonoBehaviour
         Debug.Log(index);
     }
 
-    Sprite SetCurrentIndex(int index)
+    void SetCurrentIndex(int index)
     {
         Sprite image;
         switch (index)
         {
             case 0:
-                image = nurseImage1;
+                animator.SetTrigger("Bridget");
                 break;
             case 1:
-                image = nurseImage2;
+                animator.SetTrigger("Grey");
                 break;
             case 2:
-                image = nurseImage3;
+                animator.SetTrigger("Purple");
+                break;
+            case 3:
+                animator.SetTrigger("Green");
                 break;
             default:
-                image = nurseImage4;
+                animator.SetTrigger("None");
                 break;
 
         }
-        return image;
     }
 
     Sprite ChangePoetry()
