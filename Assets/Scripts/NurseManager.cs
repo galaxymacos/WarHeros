@@ -11,6 +11,7 @@ public class NurseManager : MonoBehaviour
 
     public GameObject explosion;
     public Transform explosePosition;
+    public Position nursePosBeforeHit;
 
     private void Awake()
     {
@@ -70,17 +71,29 @@ public class NurseManager : MonoBehaviour
 
     public void TakeDamage(Nurse nurse)
     {
+        nursePosBeforeHit = nurse.position;
+
+        if (nurse.isDefusing)
+        {
+            MessageSystem.instance.Print("Mine defused at "+nursePosBeforeHit.Convert());
+            GameManager.instance.bf.Demine(nursePosBeforeHit);
+            nurse.isDefusing = false;
+            MessageSystem.instance.Print("Defuse buff is lost");
+
+            return;
+        }
+        
         if (nurse.toughness > 0)
         {
             nurse.toughness--;       
             GameManager.instance.NurseStepsOnMineWithToughness();
-            ExplodeTheMineBeingStepedOn(nurse);
+            GameManager.instance.bf.Demine(nursePosBeforeHit);
         }
         else
         {
             GameManager.instance.NurseStepsOnMine();
             nurse.MoveNurseBackToTrench();
-            ExplodeTheMineBeingStepedOn(nurse);
+            GameManager.instance.bf.Demine(nursePosBeforeHit);
             GameLoop.instance.DeselectTheCurrentNurse();
 
         }
@@ -88,10 +101,4 @@ public class NurseManager : MonoBehaviour
         Instantiate(explosion, explosePosition);
     }
 
-    public void ExplodeTheMineBeingStepedOn(Nurse nurse)
-    {
-        MessageSystem.instance.Print("Explode the mine at "+nurse.position.Convert());
-        GameManager.instance.bf.Demine(nurse.position);
-    }
-    
 }
