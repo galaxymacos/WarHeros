@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 710091695}
   - component: {fileID: 710091698}
   - component: {fileID: 710091697}
+  - component: {fileID: 710091699}
   m_Layer: 0
   m_Name: NurseManager
   m_TagString: Untagged
@@ -372,7 +373,7 @@ MonoBehaviour:
   nurses:
   - {fileID: 710091697}
   - {fileID: 710091698}
-  - {fileID: 710091698}
+  - {fileID: 710091699}
   - {fileID: 710091698}
 --- !u!4 &710091696
 Transform:
@@ -421,6 +422,24 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 882eae31abcb7f94ba0d5cc927c13149, type: 3}
   skill: {fileID: 0}
   mobilityEachTurn: 1
+  mobilityCounter: 0
+  toughness: 0
+  hasSpawned: 0
+--- !u!114 &710091699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710091694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61970c2dbf0041cf8be907e6d8581f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 99c71c8334d8ba44fbc4dc41c657c31d, type: 3}
+  skill: {fileID: 0}
+  mobilityEachTurn: 2
   mobilityCounter: 0
   toughness: 0
   hasSpawned: 0
@@ -1042,6 +1061,124 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 929793104257638018, guid: 8fa2d67ad8852814293c421617a0daea, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8fa2d67ad8852814293c421617a0daea, type: 3}
+--- !u!1 &1321839787 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 929793104257638041, guid: 8fa2d67ad8852814293c421617a0daea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1321839786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1321839788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 929793102802591273, guid: 8fa2d67ad8852814293c421617a0daea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1321839786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1321839789 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 929793104362968551, guid: 8fa2d67ad8852814293c421617a0daea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1321839786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1321839790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 929793104522048473, guid: 8fa2d67ad8852814293c421617a0daea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1321839786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1321839791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 929793103301777255, guid: 8fa2d67ad8852814293c421617a0daea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1321839786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1321839792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 929793102557260824, guid: 8fa2d67ad8852814293c421617a0daea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1321839786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1321839793 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 929793103664521769, guid: 8fa2d67ad8852814293c421617a0daea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1321839786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1321839794 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 929793102603143249, guid: 8fa2d67ad8852814293c421617a0daea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1321839786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1321839795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 929793103841282495, guid: 8fa2d67ad8852814293c421617a0daea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1321839786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1321839796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 929793104297914298, guid: 8fa2d67ad8852814293c421617a0daea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1321839786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1321839797 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 929793102561753583, guid: 8fa2d67ad8852814293c421617a0daea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1321839786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1321839798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321839787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a01437d979f03c4429b374733ccf2855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nursePortray: {fileID: 1321839797}
+  mobilityPointText: {fileID: 1321839796}
+  locationText: {fileID: 1321839795}
+  soldiersAliveText: {fileID: 1321839794}
+  RegementLeftText: {fileID: 1321839793}
+  currentNursePanel: {fileID: 1321839792}
+  leftButton: {fileID: 1321839791}
+  topButton: {fileID: 1321839790}
+  rightButton: {fileID: 1321839789}
+  downButton: {fileID: 1321839788}
 --- !u!1 &1442940179
 GameObject:
   m_ObjectHideFlags: 0

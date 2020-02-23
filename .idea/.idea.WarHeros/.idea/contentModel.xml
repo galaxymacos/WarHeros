@@ -6,12 +6,12 @@
     <e p="E:\Game Jam\WarHeros" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="BattleField.cs" t="Include" />
         <e p="Ella" t="Include">
           <e p="NurseScene.cs" t="Include" />
         </e>
         <e p="GameManager.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="BattleField.cs" t="Include" />
           <e p="Defuse.cs" t="Include" />
           <e p="Detect.cs" t="Include" />
           <e p="DistanceHeal.cs" t="Include" />
@@ -24,12 +24,12 @@
           <e p="RedNurse.cs" t="Include" />
           <e p="SceneLoader.cs" t="Include" />
           <e p="Skill.cs" t="Include" />
+          <e p="SoldierLocations.cs" t="Include" />
           <e p="TouchNurse.cs" t="Include" />
           <e p="Tough.cs" t="Include" />
           <e p="ToughNurse.cs" t="Include" />
           <e p="UIMessager.cs" t="Include" />
         </e>
-        <e p="SoldierLocations.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />
