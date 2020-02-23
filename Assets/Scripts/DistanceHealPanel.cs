@@ -47,5 +47,6 @@ public class DistanceHealPanel : MonoBehaviour
         /*positionInt is a range of 0 to 8 (1 to 9) to know which button was pressed (0 is top left button, 8 is bottom right)*/
         //NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].Heal();
         Position pos = new Position(toCheck[positionInt].row, toCheck[positionInt].column);
+        //then, use the newly created position to heal the soldier
     }
 }

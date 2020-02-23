@@ -1874,7 +1874,7 @@ MonoBehaviour:
   - {fileID: 9170219449140374732}
   - {fileID: 9170219448487001339}
   - {fileID: 9170219448946909112}
-  soldierSprite: {fileID: 21300000, guid: 0f79bf90e18b2264f99a29866fef36a9, type: 3}
+  soldierSprite: {fileID: 21300000, guid: a12590bb00a32a24e870fd4b3d404c69, type: 3}
 --- !u!1 &9170219449297392651
 GameObject:
   m_ObjectHideFlags: 0
