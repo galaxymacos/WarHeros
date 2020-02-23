@@ -145,6 +145,15 @@ public class Events : MonoBehaviour
             }
         }
 
+        string message = "";
+
+        foreach (var e in area)
+        {
+            message += e.Convert() + ", ";
+        }
+
+        MessageSystem.instance.Print(message);
+
     }
 
     void HailOfBullets()
