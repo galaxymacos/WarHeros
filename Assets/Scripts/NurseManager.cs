@@ -53,10 +53,18 @@ public class NurseManager : MonoBehaviour
             GameManager.instance.NurseStepsOnMine();
         }
         
+        ExplodeTheMineBeingStepedOn();
+
         // Move the player back to trench
         print("Move the player back to trench because he steps on a mine");
         nurses[GameLoop.instance.currentNurseToMove].MoveNurseBackToTrench();
         
+        
+    }
+
+    public void ExplodeTheMineBeingStepedOn()
+    {
+        GameManager.instance.bf.Demine(nurses[GameLoop.instance.currentNurseToMove].position);
     }
     
 }

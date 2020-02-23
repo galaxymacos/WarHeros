@@ -8,6 +8,7 @@ public class Skill : MonoBehaviour
     protected string skillDescription;
     protected private bool isSkillAvailable;
     protected private int skillPoint;
+    public Nurse owner;
 
     public virtual void Activate()
     {

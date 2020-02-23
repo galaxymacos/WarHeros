@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
     public class DistanceHeal : Skill
     {
         const int skillPointMax = 1;
+
+
         private void Start()
         {
             skillName = "Pistolet-Seringue";
@@ -22,7 +25,7 @@ namespace Assets.Scripts
             {
                 isSkillAvailable = false;
             }
-            //TODO : implement a distance heal method in the nurses' heal
+
         }
 
         public override void Replenish()

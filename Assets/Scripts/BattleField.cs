@@ -239,7 +239,7 @@ public class BattleField
 
     public bool IsPosInBoard(Position pos)
     {
-        if (pos.row < 0 || pos.column < 0 || pos.row > depth || pos.column > width)
+        if (pos.row < 0 || pos.column < 0 || pos.row >= depth || pos.column >= width)
         {
             return false;
         }
