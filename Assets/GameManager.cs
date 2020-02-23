@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public BattleField bf;
 
-    [SerializeField] public int RegimenLives = 3;
-    [SerializeField] public int soldiersToSave = 3;
+    [SerializeField] public int RegimenLives = 10;
+    [SerializeField] public int soldiersToSave = 20;
     
     
     
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this);
-        bf = new BattleField();
+        bf = new BattleField(12,12,8,20);
     }
 
 

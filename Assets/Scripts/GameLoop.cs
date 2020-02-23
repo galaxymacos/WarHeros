@@ -76,7 +76,7 @@ public class GameLoop: MonoBehaviour
     }
     public void NextRound()
     {
-        // SpawnRandomEvent();
+        SpawnRandomEvent();
 
         ReplenishNurseMobility();
 
