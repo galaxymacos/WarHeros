@@ -71,21 +71,21 @@ public class NurseManager : MonoBehaviour
         {
             nurse.toughness--;       
             GameManager.instance.NurseStepsOnMineWithToughness();
-            ExplodeTheMineBeingStepedOn();
+            ExplodeTheMineBeingStepedOn(nurse);
         }
         else
         {
             GameManager.instance.NurseStepsOnMine();
             nurse.MoveNurseBackToTrench();
-            ExplodeTheMineBeingStepedOn();
+            ExplodeTheMineBeingStepedOn(nurse);
             GameLoop.instance.DeselectTheCurrentNurse();
 
         }
     }
 
-    public void ExplodeTheMineBeingStepedOn()
+    public void ExplodeTheMineBeingStepedOn(Nurse nurse)
     {
-        GameManager.instance.bf.Demine(nurses[GameLoop.instance.currentNurseToMove].position);
+        GameManager.instance.bf.Demine(nurse.position);
     }
     
 }
