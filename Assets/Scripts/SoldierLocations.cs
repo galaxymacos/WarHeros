@@ -8,6 +8,8 @@ public class SoldierLocations : MonoBehaviour
     [SerializeField] GameObject[] frames;
     List<Position> soldierPositions;
 
+    public List<Position> SoldierPositions { get => soldierPositions; set => soldierPositions = value; }
+
     // Start is called before the first frame update
     void Start()
     {
