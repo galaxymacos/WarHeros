@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Detect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Detect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,15 +60,15 @@
         <option value="$PROJECT_DIR$/Assets/GreenNurse.cs" />
         <option value="$PROJECT_DIR$/Assets/RedNurse.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GreenNurse.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" />
         <option value="$PROJECT_DIR$/Assets/BattleField.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BattleField.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIMessager.cs" />
         <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Skill.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" />
         <option value="$PROJECT_DIR$/Assets/UiManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Detect.cs" />
       </list>
     </option>
@@ -147,9 +149,9 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="277" y="74" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1582391678589" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1582429144231">
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1582431256247">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1582429144231" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1582431256247" />
   </component>
 </project>

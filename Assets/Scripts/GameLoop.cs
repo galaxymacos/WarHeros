@@ -81,6 +81,12 @@ public class GameLoop: MonoBehaviour
         {
             print("Replenish the mobility of the nurse "+nurse.GetType().FullName+" to full");
             nurse.ReplenishMobility();
+
+            if (nurse.skill != null)
+            {
+                print("Replenish all the skills");
+                nurse.skill.Replenish();
+            }
         }
 
         if (currentNurseToMove != -1)

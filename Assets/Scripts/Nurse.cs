@@ -110,8 +110,10 @@ public class Nurse: MonoBehaviour
 
     public void CastSkill()
     {
+        print("try to cast a skill");
         if (skill.IsSkillAvailable())
         {
+            print("skill is available");
             skill.Activate();
         }
         GameLoop.instance.onNurseMoveComplete?.Invoke();
