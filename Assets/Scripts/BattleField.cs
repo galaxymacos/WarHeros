@@ -223,6 +223,20 @@ public class BattleField
         return false;
     }
 
+    public int AdvencedCheckForMine(Position pos)
+    {
+        //if out of board
+        if (!IsPosInBoard(pos))
+        {
+            return -1;
+        }
+        else if (matrix[pos.row, pos.column] == MINECHAR)
+        {
+            return 1;
+        }
+        return 0;
+    }
+
     public bool IsPosInBoard(Position pos)
     {
         if (pos.row < 0 || pos.column < 0 || pos.row > depth || pos.column > width)
