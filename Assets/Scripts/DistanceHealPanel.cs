@@ -13,6 +13,7 @@ public class DistanceHealPanel : MonoBehaviour
 
     public void ActivatePanel()
     {
+        gameObject.SetActive(true);
         //TODO : implement a distance heal method in the nurses' heal
         Position pos = NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].position;
         //change images accordingly
