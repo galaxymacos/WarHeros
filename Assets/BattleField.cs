@@ -21,7 +21,70 @@ public class BattleField
         this.soldierCount = soldierCount;
         matrix = new char[depth, width];
         FillField(mineCount);
-        SpawnSoldiers(soldierCount);
+        FillSoldiers(soldierCount);
+        //SpawnEntities(soldierCount,Entities.soldier);
+    }
+
+    private void FillSoldiers(int soldierCount)
+    {
+        //number of mine to place in each row
+        var countAtRow = new int[depth];
+        //select wich row the mines go in
+        for (int i = 0; i < mineCount; i++)
+        {
+            //use for random
+            int weight = 0;
+            //chance for a row to get picked
+            var weigthAtRow = new int[depth];
+            //calculate chances for every row
+            for (int r = 0; r < countAtRow.Length; r++)
+            {
+                //use the square of the row so there is more chance of higher row to get pick
+                //the more mine there are in a row the less chance there will be one more mine in it
+                int m = 0;
+                for(int j=0;i<width;i++)
+                {
+                    if(IsOccupied(new Position(i,j)))
+                    {
+                        m++;
+                    }
+                }
+
+
+                weigthAtRow[r] = (r + 1) * (width - m);
+            }
+            //add the weight of every row for the random
+            //Console.WriteLine("countarow"+countAtRow.Length);
+            foreach (var r in weigthAtRow)
+            {
+                //Console.WriteLine(r);
+                weight += r;
+            }
+            ///random from 0 to weigth
+            int rand = 0;
+            rand = Random.Range(0, weight);
+            //as soon as the cumulative weight goes over the random number you add a mine
+            for (int j = 0, cumulativeWeight = 0; j < depth; j++)
+            {
+                cumulativeWeight += weigthAtRow[j];
+                if (rand < cumulativeWeight)
+                {
+                    //if you place a mine you are done
+                    countAtRow[j]++;
+                    break;
+                }
+            }
+        }
+        //for each row
+        for (int i = 0; i < depth; i++)
+        {
+            int[] row = FisherYale(width);
+            for (int j = 0; j < countAtRow[i]; j++)
+            {
+                matrix[i, row[j]] = MINECHAR;
+            }
+        }
+
     }
 
     public BattleField()
