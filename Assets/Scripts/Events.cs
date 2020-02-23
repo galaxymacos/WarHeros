@@ -18,70 +18,81 @@ public class Events : MonoBehaviour
 
     private void Start()
     {
-        events = new int[28];
+        //events = new int[32];
 
-        for (int i = 0; i < events.Length; i++)
-        {
-            if (i < 4)
-            {
-                events[i] = 0;
-            }
+        //for (int i = 0; i < events.Length; i++)
+        //{
+        //    if (i < 4)
+        //    {
+        //        events[i] = 0;
+        //    }
 
-            else if (i < 12)
-            {
-                events[i] = 1;
-            }
+        //    else if (i < 12)
+        //    {
+        //        events[i] = 1;
+        //    }
 
-            else if (i < 20)
-            {
-                events[i] = 2;
-            }
+        //    else if (i < 20)
+        //    {
+        //        events[i] = 2;
+        //    }
 
-            else
-            {
-                events[i] = 3;
-            }
-        }
+        //    else if (i < 28)
+        //    {
+        //        events[i] = 3;
+        //    }
 
-        for (int i = 0; i < events.Length - 1; i++)
-        {
-            int r = Random.Range(i, events.Length);
-            //switch r and i
-            int temp = events[i];
-            events[i] = events[r];
-            events[r] = temp;
-        }
+        //    else
+        //    {
+        //        events[i] = 4;
+        //    }
+        //}
+
+        //for (int i = 0; i < events.Length - 1; i++)
+        //{
+        //    int r = Random.Range(i, events.Length);
+        //    //switch r and i
+        //    int temp = events[i];
+        //    events[i] = events[r];
+        //    events[r] = temp;
+        //}
     }
     public void SelectRandomFunction()
     {
-        if (index < events.Length - 1)
-        {
-            switch (events[index++])
-            {
-                case 0:
-                    SpawnSoldier();
-                    Debug.Log("Soldier");
-                    break;
-                case 1:
-                    SpawnMine();
-                    Debug.Log("Mine");
-                    break;
-                case 2:
-                    HailOfBullets();
-                    Debug.Log("Bullets");
-                    break;
-                case 3:
-                default:
-                    ArtilleryStrike();
-                    Debug.Log("Artillery");
-                    break;
-            }
-        }
+        //if (index < events.Length - 1)
+        //{
+        //    switch (events[index++])
+        //    {
+        //        case 0:
+        //            SpawnSoldier();
+        //            Debug.Log("Soldier");
+        //            break;
+        //        case 1:
+        //            SpawnMine();
+        //            Debug.Log("Mine");
+        //            break;
+        //        case 2:
+        //            HailOfBullets();
+        //            Debug.Log("Bullets");
+        //            break;
+        //        case 3:
+        //        default:
+        //            ArtilleryStrike();
+        //            Debug.Log("Artillery");
+        //            break;
+        //        case 4:
+        //            CarePackage();
+        //            Debug.Log("Care Package");
+        //            break;
+        //    }
+        //}
 
-        else
-        {
-            ArtilleryStrike();
-        }
+        //else
+        //{
+        //    ArtilleryStrike();
+        //}
+
+        CarePackage();
 
     }
 
@@ -152,8 +163,6 @@ public class Events : MonoBehaviour
 
         foreach (var a in area)
         {
-            GameManager.instance.bf.Demine(a);
-
             if (GameManager.instance.bf.IsThereSoldier(a))
             {
                 GameManager.instance.SoldierDie();
@@ -183,5 +192,21 @@ public class Events : MonoBehaviour
     {
         //spawn a soldier in a random unoccupied space
         GameManager.instance.bf.SpawnEntities(1, BattleField.Entities.soldier);
+    }
+
+    void CarePackage()
+    {
+        for (int i = 0; i < NurseManager.instance.nurses.Count; i++)
+        {
+            if (NurseManager.instance.nurses[i].skill != null)
+            {
+                NurseManager.instance.nurses[i].skill.Replenish();
+            }
+
+            else
+            {
+                NurseManager.instance.nurses[i].toughness++;
+            }
+        }
     }
 }
