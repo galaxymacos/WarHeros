@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public void GainPointForHealingSoldiers()
     {
         soldiersToSave -= 1;
+        CheckGameEndCondition();
     }
 
     public void NurseStepsOnMineWithToughness()
@@ -59,10 +60,6 @@ public class GameManager : MonoBehaviour
         CheckGameEndCondition();
     }
     
-    
-
-
-
     public void CheckGameEndCondition()
     {
         if (RegimenLives <= 0)

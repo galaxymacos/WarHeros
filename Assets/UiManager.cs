@@ -23,6 +23,10 @@ public class UiManager : MonoBehaviour
     public GameObject downButton;
     public GameObject skillButton;
     public GameObject healButton;
+    public GameObject firstNurseButton;
+    public GameObject secondNurseButton;
+    public GameObject thirdNurseButton;
+    public GameObject fourthNurseButton;
 
     public static UiManager instance;
 
@@ -77,6 +81,74 @@ public class UiManager : MonoBehaviour
 
     public void SetVisibilityToUI()
     {
+        if (NurseManager.instance.nurses.Count < 1)
+        {
+            firstNurseButton.SetActive(false);
+        }
+        else
+        {
+            if (NurseManager.instance.nurses[0].mobilityCounter == 0)
+            {
+                firstNurseButton.SetActive(false);
+            }
+            else
+            {
+                firstNurseButton.SetActive(true);
+            }
+        }
+        
+        
+        if (NurseManager.instance.nurses.Count < 2)
+        {
+            secondNurseButton.SetActive(false);
+        }
+        else
+        {
+            if (NurseManager.instance.nurses[1].mobilityCounter == 0)
+            {
+                secondNurseButton.SetActive(false);
+            }
+            else
+            {
+                secondNurseButton.SetActive(true);
+            }
+        }
+        
+
+        if (NurseManager.instance.nurses.Count < 3)
+        {
+            thirdNurseButton.SetActive(false);
+        }
+        else
+        {
+            if (NurseManager.instance.nurses[2].mobilityCounter == 0)
+            {
+                thirdNurseButton.SetActive(false);
+            }
+            else
+            {
+                thirdNurseButton.SetActive(true);
+            }
+        }
+        
+
+        if (NurseManager.instance.nurses.Count < 4)
+        {
+            fourthNurseButton.SetActive(false);
+        }
+        else
+        {
+            if (NurseManager.instance.nurses[3].mobilityCounter == 0)
+            {
+                thirdNurseButton.SetActive(false);
+            }
+            else
+            {
+                thirdNurseButton.SetActive(true);
+            }
+        }
+        
+        
         if (GameLoop.instance.currentNurseToMove == -1)
         {
             currentNursePanel.SetActive(false);

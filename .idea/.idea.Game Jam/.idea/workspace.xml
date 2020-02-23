@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2af03e17-37e9-4689-ab23-d65496ca97cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Game Jam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game Jam/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleField.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleField.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Detect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Detect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UiManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UiManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,10 +57,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Detect.cs" />
-        <option value="$PROJECT_DIR$/Assets/UiManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BattleField.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" />
         <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" />
+        <option value="$PROJECT_DIR$/Assets/UiManager.cs" />
       </list>
     </option>
   </component>
@@ -107,7 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582348808263</updated>
       <workItem from="1582348811938" duration="7074000" />
-      <workItem from="1582463849639" duration="2625000" />
+      <workItem from="1582463849639" duration="3455000" />
     </task>
     <servers />
   </component>
@@ -122,10 +118,10 @@
     </state>
     <state x="-1916" y="182" key="RiderGenerateDialog/-2560.0.1707.960/0.0.1707.960@-2560.0.1707.960" timestamp="1582354313207" />
     <state x="644" y="182" key="RiderGenerateDialog/-2560.0.1707.960/0.0.1707.960@0.0.1707.960" timestamp="1582351717879" />
-    <state x="-2044" y="196" width="672" height="650" key="search.everywhere.popup" timestamp="1582466485295">
+    <state x="-2044" y="196" width="672" height="650" key="search.everywhere.popup" timestamp="1582467497395">
       <screen x="-2560" y="0" width="1707" height="920" />
     </state>
-    <state x="-2044" y="196" width="672" height="650" key="search.everywhere.popup/-2560.0.1707.920/0.0.1707.920@-2560.0.1707.920" timestamp="1582466485295" />
+    <state x="-2044" y="196" width="672" height="650" key="search.everywhere.popup/-2560.0.1707.920/0.0.1707.920@-2560.0.1707.920" timestamp="1582467497395" />
     <state x="-2044" y="205" width="672" height="678" key="search.everywhere.popup/-2560.0.1707.960/0.0.1707.960@-2560.0.1707.960" timestamp="1582464934800" />
     <state x="516" y="205" key="search.everywhere.popup/-2560.0.1707.960/0.0.1707.960@0.0.1707.960" timestamp="1582349835672" />
   </component>
