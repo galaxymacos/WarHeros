@@ -41,14 +41,27 @@ public class Nurse: MonoBehaviour
     // Heal the soldider in the nurse's position
     public void Heal()
     {
-        Heal(position);
+        if (canHeal)
+        {
+            
+            GameManager.instance.bf.RemoveSoldier(position);
+            // Gain a point for healing a soldier
+            GameManager.instance.GainPointForHealingSoldiers();
+            if (skill != null)
+            {
+                skill.Replenish();
+                
+            }
+            GameLoop.instance.onNurseMoveComplete?.Invoke();
+        }
     }
 
     // Heal the soldier at a desired position
     public void Heal(Position checkPosition)
     {
-        if (canHeal)
+        if (GameManager.instance.bf.IsThereSoldier(checkPosition))
         {
+            
             GameManager.instance.bf.RemoveSoldier(checkPosition);
             // Gain a point for healing a soldier
             GameManager.instance.GainPointForHealingSoldiers();
@@ -91,7 +104,8 @@ public class Nurse: MonoBehaviour
         if (GameManager.instance.bf.IsPosInBoard(newPosition))
         {
             position = newPosition;
-            print($"Nurse {NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove]} moves to row {position.row}, column {position.column}");
+            // ContextualTextPanel.instance.Print($"Nurse moves to new position {Utility.NumberToChar(position.row)} {position.column}");
+            // print($"Nurse {NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove]} moves to row {position.row}, column {position.column}");
             UiManager.instance.onLocationChanged?.Invoke(position);
         }
         else

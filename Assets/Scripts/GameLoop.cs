@@ -76,10 +76,26 @@ public class GameLoop: MonoBehaviour
     }
     public void NextRound()
     {
-        print("going to the next round");
+        SpawnRandomEvent();
+
+        ReplenishNurseMobility();
+
+        if (currentNurseToMove != -1)
+        {
+            DeselectTheCurrentNurse();
+        }
+    }
+
+    private void SpawnRandomEvent()
+    {
+        Events.instance.SelectRandomFunction();
+    }
+
+    private static void ReplenishNurseMobility()
+    {
         foreach (Nurse nurse in NurseManager.instance.nurses)
         {
-            print("Replenish the mobility of the nurse "+nurse.GetType().FullName+" to full");
+            print("Replenish the mobility of the nurse " + nurse.GetType().FullName + " to full");
             nurse.ReplenishMobility();
 
             if (nurse.skill != null)
@@ -88,14 +104,8 @@ public class GameLoop: MonoBehaviour
                 nurse.skill.Replenish();
             }
         }
-
-        if (currentNurseToMove != -1)
-        {
-            DeselectTheCurrentNurse();
-        }
     }
-    
-    
+
 
     public void StartGame()
     {
