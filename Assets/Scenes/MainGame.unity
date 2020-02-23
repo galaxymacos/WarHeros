@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e127fd4afed433e8295c0a5481debb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 303ef6b17acefea48851b4c86899d4fa, type: 3}
+  sprite: {fileID: 0}
   skill: {fileID: 710091700}
   mobilityEachTurn: 2
   mobilityCounter: 0
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61970c2dbf0041cf8be907e6d8581f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 99c71c8334d8ba44fbc4dc41c657c31d, type: 3}
+  sprite: {fileID: 0}
   skill: {fileID: 0}
   mobilityEachTurn: 2
   mobilityCounter: 0
