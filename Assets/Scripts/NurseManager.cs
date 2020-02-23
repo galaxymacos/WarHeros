@@ -47,18 +47,18 @@ public class NurseManager : MonoBehaviour
         {
             nurse.toughness--;       
             GameManager.instance.NurseStepsOnMineWithToughness();
+            ExplodeTheMineBeingStepedOn();
         }
         else
         {
             GameManager.instance.NurseStepsOnMine();
+            nurses[GameLoop.instance.currentNurseToMove].MoveNurseBackToTrench();
+            ExplodeTheMineBeingStepedOn();
+            GameLoop.instance.DeselectTheCurrentNurse();
+
         }
         
-        ExplodeTheMineBeingStepedOn();
-
-        // Move the player back to trench
-        print("Move the player back to trench because he steps on a mine");
-        nurses[GameLoop.instance.currentNurseToMove].MoveNurseBackToTrench();
-        
+       
         
     }
 

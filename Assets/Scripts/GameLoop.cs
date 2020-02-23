@@ -39,7 +39,7 @@ public class GameLoop: MonoBehaviour
             onNurseStepOnMine?.Invoke(NurseManager.instance.nurses[currentNurseToMove]);
             
             
-            DeselectTheCurrentNurse();
+            
         }
         else if (NurseManager.instance.nurses[currentNurseToMove].mobilityCounter == 0)
         {

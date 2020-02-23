@@ -389,7 +389,6 @@ MonoBehaviour:
   - {fileID: 710091697}
   - {fileID: 710091698}
   - {fileID: 710091699}
-  - {fileID: 710091702}
 --- !u!4 &710091696
 Transform:
   m_ObjectHideFlags: 0
@@ -494,7 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
-  skill: {fileID: 710091700}
+  skill: {fileID: 0}
   mobilityEachTurn: 2
   mobilityCounter: 0
   toughness: 0
