@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainGame.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/VictoryScreen.unity
+    guid: 2ce23718807697c4e920a12b1fe0941a
+  - enabled: 1
+    path: Assets/Scenes/FailureScreen.unity
+    guid: dcd2132d8c7142d48b535571806e61f0
+  - enabled: 1
     path: Assets/Scenes/Nurse.unity
     guid: a56d46adc70d10444ba2e90ca080d502
   m_configObjects: {}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,12 +21,9 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this);
+        bf = new BattleField();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        bf = new BattleField(12,12,20,8);
-    }
+
 
     public void NurseStepsOnMine()
     {
@@ -65,11 +63,13 @@ public class GameManager : MonoBehaviour
         if (RegimenLives <= 0)
         {
             print("You lose the game");
+            SceneManager.LoadScene(3);
         }
 
         if (soldiersToSave <= 0)
         {
             print("You win the game");
+            SceneManager.LoadScene(2);
         }
     }
 

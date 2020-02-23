@@ -5,6 +5,17 @@ public class UIMessager: MonoBehaviour
 {
     public static UIMessager instance;
 
+
+    private void Update()
+    {
+
+        // if (GameLoop.instance.currentNurseToMove != -1)
+        // {
+            // print(NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].mobilityCounter);
+        // }
+    }
+
+
     private void Awake()
     {
         if (instance == null)
@@ -21,45 +32,79 @@ public class UIMessager: MonoBehaviour
     
     public void SelectNurse(int index)
     {
-        print($"Select nurse {index}");
         GameLoop.instance.currentNurseToMove = index;
         if (!NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].hasSpawned)
         {
-            // Open the panel for spawning the nurse
+            print($"Nurse {index} has not spawned");
+            print($"Temporarily spawn your nurse to the column "+4);
+            SpawnCurrentNurseTo(4);
+        }
+
+        if (GameLoop.instance.currentNurseToMove != -1)
+        {
+            UiManager.instance.onLocationChanged?.Invoke(NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].position);
         }
     }
 
     public void SpawnCurrentNurseTo(int columnIndex)
     {
-        NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].hasSpawned = true;
         NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].SetBirthLocation(columnIndex);
+        print("Spawn current nurse to the column "+columnIndex);
     }
 
     public void MoveUp()
     {
         print("Move up ");
-        NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].Move(NurseMoveDirection.Up);
+        if (GameLoop.instance.currentNurseToMove != -1)
+        {
+            NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].Move(NurseMoveDirection.Up);
+        }
+        else
+        {
+            print("You don't have mobility in this turn");
+        }
     }
 
     public void MoveDown()
     {
         print("Move down ");
 
-        NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].Move(NurseMoveDirection.Down);
+        if (GameLoop.instance.currentNurseToMove != -1)
+        {
+            NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].Move(NurseMoveDirection.Down);
+        }
+        else
+        {
+            print("You don't have mobility in this turn");
+        }
     }
     
     public void MoveLeft()
     {
         print("Move left ");
 
-        NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].Move(NurseMoveDirection.Left);
+        if (GameLoop.instance.currentNurseToMove != -1)
+        {
+            NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].Move(NurseMoveDirection.Left);
+        }
+        else
+        {
+            print("You don't have mobility in this turn");
+        }
     }
 
     public void MoveRight()
     {
         print("Move right ");
 
-        NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].Move(NurseMoveDirection.Right);
+        if (GameLoop.instance.currentNurseToMove != -1)
+        {
+            NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].Move(NurseMoveDirection.Right);
+        }
+        else
+        {
+            print("You don't have mobility in this turn");
+        }
     }
 
     public void CastSkill()

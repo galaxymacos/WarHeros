@@ -18,16 +18,19 @@ public class Nurse: MonoBehaviour
     [Header("Don't change the below variable")]
     public Position position;
     public Skill skill;
-    public int mobilityEachTurn;
-    public int mobilityCounter = 0;
+    public int mobilityEachTurn = 2;
+    public int mobilityCounter;
     public int toughness;
     public bool hasMobility => mobilityCounter > 0;
     public bool canHeal => GameManager.instance.bf.IsThereSoldier(position);
 
-    public bool hasSpawned;
+    public bool hasSpawned => position.column >= 0;
 
+    private void Awake()
+    {
+        position = new Position(-1,-1);
+    }
 
-    
     // Heal the soldider in the nurse's position
     public void Heal()
     {
@@ -52,7 +55,7 @@ public class Nurse: MonoBehaviour
 
     public void SetBirthLocation(int columnIndex)
     {
-        hasSpawned = true;
+        print("give birth to the player");
         position = new Position(0, columnIndex);
     }
 
@@ -71,7 +74,7 @@ public class Nurse: MonoBehaviour
                 newPosition = new Position(position.row, position.column-1);
                 break;
             case NurseMoveDirection.Right:
-                newPosition = new Position(position.row+1, position.column+1);
+                newPosition = new Position(position.row, position.column+1);
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(nurseMoveDirection), nurseMoveDirection, null);
@@ -81,6 +84,7 @@ public class Nurse: MonoBehaviour
         {
             position = newPosition;
             print($"Nurse {NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove]} moves to row {position.row}, column {position.column}");
+            UiManager.instance.onLocationChanged?.Invoke(position);
         }
         else
         {
