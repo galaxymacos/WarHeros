@@ -34,7 +34,7 @@ public class DistanceHealPanel : MonoBehaviour
         {
             toCheck[i] = new Position(toCheck[i].column, toCheck[i].row);
             // tocheck[i] == 0 means that it returns a soldier
-            if (GameManager.instance.bf.AdvencedCheckForMine(toCheck[i]) == 0)
+            if (GameManager.instance.bf.AdvencedCheckForMine(toCheck[i]) == 2)
             {
                 //change the image and activate the button
                 matrixButtons[i].gameObject.SetActive(true);
