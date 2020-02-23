@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this);
-        bf = new BattleField(12,12,0,8);
+        bf = new BattleField();
     }
 
 
@@ -62,11 +63,13 @@ public class GameManager : MonoBehaviour
         if (RegimenLives <= 0)
         {
             print("You lose the game");
+            SceneManager.LoadScene(3);
         }
 
         if (soldiersToSave <= 0)
         {
             print("You win the game");
+            SceneManager.LoadScene(2);
         }
     }
 
