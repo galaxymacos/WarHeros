@@ -32,5 +32,10 @@ namespace Assets.Scripts
                 skillPoint++;
             }
         }
+
+        public int RemainingSkillPoints()
+        {
+            return skillPoint;
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace Assets.Scripts
     public class DistanceHeal : Skill
     {
         const int skillPointMax = 1;
-
+        [SerializeField] DistanceHealPanel distanceHealPanel;
 
         private void Start()
         {
@@ -25,7 +25,7 @@ namespace Assets.Scripts
             {
                 isSkillAvailable = false;
             }
-
+            distanceHealPanel.ActivatePanel();
         }
 
         public override void Replenish()
