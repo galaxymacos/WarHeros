@@ -66,23 +66,28 @@ public class Events : MonoBehaviour
                 case 0:
                     SpawnSoldier();
                     Debug.Log("Soldier");
+                    MessageSystem.instance.Print("Event: A soldier has been spawned");
                     break;
                 case 1:
                     SpawnMine();
                     Debug.Log("Mine");
+                    MessageSystem.instance.Print("Event: A mine has been spawned");
                     break;
                 case 2:
                     HailOfBullets();
                     Debug.Log("Bullets");
+                    MessageSystem.instance.Print("Event: Hail of bullets");
                     break;
                 case 3:
                 default:
                     ArtilleryStrike();
                     Debug.Log("Artillery");
+                    MessageSystem.instance.Print("Event: Artillery Strike");
                     break;
                 case 4:
                     CarePackage();
                     Debug.Log("Care Package");
+                    MessageSystem.instance.Print("Event: Care Package");
                     break;
             }
         }
