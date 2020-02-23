@@ -59,6 +59,12 @@ public class GameManager : MonoBehaviour
         // soldiersToSave += 1;    TODO Don't increase the regiment when stepping on the mine to decrease the diffculty
         CheckGameEndCondition();
     }
+
+    public void DecreaseLive(int lifeToDecrease)
+    {
+        RegimenLives -= lifeToDecrease;
+        CheckGameEndCondition();
+    }
     
     public void CheckGameEndCondition()
     {
