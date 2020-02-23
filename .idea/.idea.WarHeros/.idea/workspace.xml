@@ -3,9 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="b4434f1d-edd1-472a-ba51-fb0ae74c6b7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarHeros/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ContextualTextPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ContextualTextPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MessageSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MessageSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MineDetectionPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MineDetectionPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MineDetectionPanel.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MineDetectionPanel.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhilTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhilTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Detect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Detect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UiManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UiManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,13 +39,16 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GreenNurse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7C074160-DD1A-4D91-9B45-B6E4C27A3BAC/15/b0519776/StringBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Position.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ContextualTextPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Defuse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Nurse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Detect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Skill.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TouchNurse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tough.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIMessager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -66,13 +75,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/BattleField.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIMessager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Skill.cs" />
-        <option value="$PROJECT_DIR$/Assets/UiManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Detect.cs" />
-        <option value="$PROJECT_DIR$/Assets/ContextualTextPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NurseManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameLoop.cs" />
         <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/MessageSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/ContextualTextPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/UiManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Nurse.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Detect.cs" />
       </list>
     </option>
   </component>
@@ -126,7 +136,7 @@
       <workItem from="1582386837636" duration="9816000" />
       <workItem from="1582398260314" duration="27010000" />
       <workItem from="1582426758256" duration="1533000" />
-      <workItem from="1582471342705" duration="4101000" />
+      <workItem from="1582471342705" duration="7603000" />
     </task>
     <servers />
   </component>
@@ -153,9 +163,9 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="277" y="74" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1582391678589" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1582475389780">
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1582478396635">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1582475389780" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1582478396635" />
   </component>
 </project>

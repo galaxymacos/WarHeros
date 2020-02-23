@@ -1,25 +1,49 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ContextualTextPanel : MonoBehaviour
 {
-    [SerializeField] float lifetime;
+    [SerializeField] float lifetime = 4f;
+    private float lifeTimeCounter;
     [SerializeField] Text message;
+
+    public Queue<string> messagesToShow;
+    private StringBuilder sb;
+    
+    private void OnEnable()
+    {
+        lifeTimeCounter = lifetime;
+        sb = new StringBuilder();
+        messagesToShow = new Queue<string>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        lifetime -= Time.deltaTime;
-        if (lifetime <= 0)
+        lifeTimeCounter -= Time.deltaTime;
+        if (lifeTimeCounter <= 0)
         {
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 
     public void Print(string s)
     {
-        message.text = s;
+        messagesToShow.Enqueue(s);
+        if (messagesToShow.Count > 3)
+        {
+            messagesToShow.Dequeue();
+        }
+        lifeTimeCounter = lifetime;
+        sb.Clear();
+        foreach (var messageToShow in messagesToShow)
+        {
+            sb.AppendLine(messageToShow);
+        }
+        message.text = sb.ToString();
     }
 }

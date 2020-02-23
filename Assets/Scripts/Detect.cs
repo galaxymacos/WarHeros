@@ -30,18 +30,18 @@ namespace Assets.Scripts
             positions = GameManager.instance.bf.GetMineArroundPosition(reversePosition);
             if (positions.Count == 0)
             {
-                print($"There is no mine near {Utility.NumberToChar(owner.position.row)}{owner.position.column}");
+                MessageSystem.instance.Print($"No mine near {owner.position.Convert()}");
             }
             else
             {
                 StringBuilder builder = new StringBuilder();
-                builder.Append("There are mines at the follow locations");
+                builder.Append("Mine found:");
                 foreach (Position position in positions)
                 {
-                    builder.Append($"{Utility.NumberToChar(position.row)}{position.column} ");
+                    builder.Append($"{position.Convert()} ");
                 }
+                MessageSystem.instance.Print(builder.ToString());
 
-                print(builder.ToString());
             }
             
         }

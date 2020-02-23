@@ -104,6 +104,7 @@ public class Nurse: MonoBehaviour
         if (GameManager.instance.bf.IsPosInBoard(newPosition))
         {
             position = newPosition;
+            MessageSystem.instance.Print($"Move to {newPosition.Convert()}");
             // ContextualTextPanel.instance.Print($"Nurse moves to new position {Utility.NumberToChar(position.row)} {position.column}");
             // print($"Nurse {NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove]} moves to row {position.row}, column {position.column}");
             UiManager.instance.onLocationChanged?.Invoke(position);

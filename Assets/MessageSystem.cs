@@ -17,7 +17,12 @@ public class MessageSystem : MonoBehaviour
 
     public void Print(string s)
     {
-        messagePanel.gameObject.SetActive(true);
+        if (!messagePanel.gameObject.activeSelf)
+        {
+            messagePanel.gameObject.SetActive(true);
+        }
         messagePanel.Print(s);
+
+        
     }
 }

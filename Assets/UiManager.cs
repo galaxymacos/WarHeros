@@ -239,7 +239,7 @@ public class UiManager : MonoBehaviour
 
     public void UpdateLocationText(Position position)
     {
-        locationText.text = NumberToChar(position.row) + " " + position.column;
+        locationText.text = position.Convert();
     }
 
 
