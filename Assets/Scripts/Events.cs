@@ -54,22 +54,26 @@ public class Events : MonoBehaviour
     }
     public void SelectRandomFunction()
     {
-        if (index < events.Length)
+        if (index < events.Length - 1)
         {
             switch (events[index++])
             {
                 case 0:
                     SpawnSoldier();
+                    Debug.Log("Soldier");
                     break;
                 case 1:
                     SpawnMine();
+                    Debug.Log("Mine");
                     break;
                 case 2:
                     HailOfBullets();
+                    Debug.Log("Bullets");
                     break;
                 case 3:
                 default:
                     ArtilleryStrike();
+                    Debug.Log("Artillery");
                     break;
             }
         }
@@ -78,12 +82,14 @@ public class Events : MonoBehaviour
         {
             ArtilleryStrike();
         }
+
     }
 
     void ArtilleryStrike()
     {
         //get random position and detect mines around the position
         Position pos = GameManager.instance.bf.GetRandomPosInBoard(false);
+        Debug.Log(pos.Convert());
         List<Position> area = new List<Position>();
         //tiles above
         area.Add(new Position(pos.column - 1, pos.row + 1));
@@ -95,6 +101,7 @@ public class Events : MonoBehaviour
         area.Add(new Position(pos.column + 1, pos.row - 1));
         //tiles to the sides
         area.Add(new Position(pos.column - 1, pos.row));
+        area.Add(pos);
         area.Add(new Position(pos.column + 1, pos.row));
         //destroy mines that were detected and injure soldiers and nurses in the area
         foreach (var a in area)
@@ -105,11 +112,22 @@ public class Events : MonoBehaviour
             {
                 GameManager.instance.SoldierDie();
                 GameManager.instance.bf.RemoveSoldier(a);
+                Debug.Log("Kill Soldier");
             }
 
             if (NurseManager.instance.HasNurseInPosition(a))
             {
-                GameManager.instance.NurseDie();
+                //NurseManager.instance.TakeDamage(NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove]);
+
+                List<Nurse> nurses = NurseManager.instance.GetNursesInPosition(a);
+
+                foreach (var n in nurses)
+                {
+                    //NurseManager.instance.TakeDamage(n);
+                    GameManager.instance.DecreaseLive(1);
+                    Debug.Log("Kill Nurse");
+                }
+
             }
         }
 
@@ -144,7 +162,13 @@ public class Events : MonoBehaviour
 
             if (NurseManager.instance.HasNurseInPosition(a))
             {
-                GameManager.instance.NurseDie();
+                //List<Nurse> nurses = NurseManager.instance.GetNursesInPosition(area);
+
+                //foreach (var n in nurses)
+                //{
+                //    NurseManager.instance.TakeDamage(n);
+                //}
+                GameManager.instance.DecreaseLive(1);
             }
         }
     }
