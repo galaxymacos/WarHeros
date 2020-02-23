@@ -21,6 +21,8 @@ public class UiManager : MonoBehaviour
     public GameObject topButton;
     public GameObject rightButton;
     public GameObject downButton;
+    public GameObject skillButton;
+    public GameObject healButton;
 
     public static UiManager instance;
 
@@ -78,6 +80,8 @@ public class UiManager : MonoBehaviour
         if (GameLoop.instance.currentNurseToMove == -1)
         {
             currentNursePanel.SetActive(false);
+            skillButton.SetActive(false);
+            healButton.SetActive(false);
         }
         else
         {
@@ -86,6 +90,32 @@ public class UiManager : MonoBehaviour
 
         if (GameLoop.instance.currentNurseToMove != -1)
         {
+            if (NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].canHeal)
+            {
+                healButton.SetActive(true);
+            }
+            else
+            {
+                healButton.SetActive(false);
+            }
+            
+            if (NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].skill != null)
+            {
+                if (NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].skill.IsSkillAvailable())
+                {
+                    skillButton.SetActive(true);
+                }
+                else
+                {
+                    skillButton.SetActive(false);
+                }
+            }
+            else
+            {
+                skillButton.SetActive(false);
+            }
+            
+            
             if (GameManager.instance.bf.IsPosInBoard(new Position(
                 NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].position.row,
                 NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].position.column - 1)))

@@ -180,13 +180,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentNurseToMove: 0
+--- !u!1 &114988843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2012087038227926732, guid: e60c443e10cf2e4479aed53a07e601d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1518907566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &118303107 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2012087038355344788, guid: e60c443e10cf2e4479aed53a07e601d8,
     type: 3}
   m_PrefabInstance: {fileID: 1518907566}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1380612302}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -580,6 +586,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1380612302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2012087038355344791, guid: e60c443e10cf2e4479aed53a07e601d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1518907566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1442940179
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,6 +642,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1141484327, guid: e60c443e10cf2e4479aed53a07e601d8, type: 3}
+      propertyPath: skillButton
+      value: 
+      objectReference: {fileID: 1380612302}
+    - target: {fileID: 1141484327, guid: e60c443e10cf2e4479aed53a07e601d8, type: 3}
+      propertyPath: healButton
+      value: 
+      objectReference: {fileID: 114988843}
     - target: {fileID: 2012087037500121657, guid: e60c443e10cf2e4479aed53a07e601d8,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -904,6 +924,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MoveUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2012087038227926738, guid: e60c443e10cf2e4479aed53a07e601d8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2012087038227926738, guid: e60c443e10cf2e4479aed53a07e601d8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2012087038227926738, guid: e60c443e10cf2e4479aed53a07e601d8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2012087038227926738, guid: e60c443e10cf2e4479aed53a07e601d8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1442940180}
+    - target: {fileID: 2012087038227926738, guid: e60c443e10cf2e4479aed53a07e601d8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Heal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2012087038227926738, guid: e60c443e10cf2e4479aed53a07e601d8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2012087038227926739, guid: e60c443e10cf2e4479aed53a07e601d8,
         type: 3}

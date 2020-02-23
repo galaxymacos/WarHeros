@@ -41,12 +41,7 @@ public class Nurse: MonoBehaviour
     // Heal the soldider in the nurse's position
     public void Heal()
     {
-        if (canHeal)
-        {
-            GameManager.instance.bf.RemoveSoldier(position);
-            skill.Replenish();
-            GameLoop.instance.onNurseMoveComplete?.Invoke();
-        }
+        Heal(position);
     }
 
     // Heal the soldier at a desired position
@@ -54,7 +49,9 @@ public class Nurse: MonoBehaviour
     {
         if (canHeal)
         {
-            GameManager.instance.bf.RemoveSoldier(checkPosition);        
+            GameManager.instance.bf.RemoveSoldier(checkPosition);
+            // Gain a point for healing a soldier
+            GameManager.instance.GainPointForHealingSoldiers();
             skill.Replenish();
             GameLoop.instance.onNurseMoveComplete?.Invoke();
         }

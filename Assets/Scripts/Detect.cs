@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -33,12 +34,14 @@ namespace Assets.Scripts
             }
             else
             {
-                print("There are mines at the follow locations");
+                StringBuilder builder = new StringBuilder();
+                builder.Append("There are mines at the follow locations");
                 foreach (Position position in positions)
                 {
-                    
-                    print($"{Utility.NumberToChar(position.row)}{position.column}");
+                    builder.Append($"{Utility.NumberToChar(position.row)}{position.column} ");
                 }
+
+                print(builder.ToString());
             }
             
         }

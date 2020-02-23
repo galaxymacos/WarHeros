@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this);
-        bf = new BattleField(12,12,20,8);
+        bf = new BattleField();
     }
 
 
@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour
         soldiersToSave += 1;
         CheckGameEndCondition();
 
+    }
+
+    public void GainPointForHealingSoldiers()
+    {
+        soldiersToSave -= 1;
     }
 
     public void NurseStepsOnMineWithToughness()

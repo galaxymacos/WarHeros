@@ -104,7 +104,7 @@ public class BattleField
         depth = 6;
         matrix[0, 0] = MINECHAR;
         matrix[0, 1] = MINECHAR;
-        matrix[5, 5] = SOLDIERCHAR;
+        matrix[0, 5] = SOLDIERCHAR;
 
         Debug.Log(CheckForMine(new Position(0, 0)));
         Debug.Log(CheckForMine(new Position(1, 0)));
