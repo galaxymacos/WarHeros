@@ -44,6 +44,7 @@ namespace Assets.Scripts
 
             }
             
+            UiManager.instance.mineDetectionPanel.SetActive(true);
         }
 
         public override void Replenish()

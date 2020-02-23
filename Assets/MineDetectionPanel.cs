@@ -12,7 +12,7 @@ public class MineDetectionPanel : MonoBehaviour
         //get nurse location
         //Position pos = NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].position;
         //Position pos = new Position(6, 6);
-        Position pos = NurseManager.instance.nurses[GameLoop.instance.currentNurseToMove].position;
+        Position pos = NurseManager.instance.nurses[1].position;
         //Position pos = new Position(6, 6);
         //detect mines around
         List<Position> area = GameManager.instance.bf.GetMineArroundPosition(pos);

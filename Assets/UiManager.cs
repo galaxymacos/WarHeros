@@ -27,6 +27,7 @@ public class UiManager : MonoBehaviour
     public GameObject secondNurseButton;
     public GameObject thirdNurseButton;
     public GameObject fourthNurseButton;
+    public GameObject mineDetectionPanel;
 
     public static UiManager instance;
 

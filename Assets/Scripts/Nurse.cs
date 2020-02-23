@@ -14,13 +14,15 @@ public class Nurse: MonoBehaviour
 
     // adjustable
     public Sprite sprite;
-    
+    public string nurseName;
+
     [Header("Don't change the below variable")]
     public Position position;
     public Skill skill;
     public int mobilityEachTurn = 2;
     public int mobilityCounter;
     public int toughness;
+    public bool isDefusing;
     public bool hasMobility => mobilityCounter > 0;
     public bool canHeal => GameManager.instance.bf.IsThereSoldier(position);
 
