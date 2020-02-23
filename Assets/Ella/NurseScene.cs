@@ -34,11 +34,10 @@ public class NurseScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //nurseImage.sprite = ChangePoetry();
-        //positionTxt.text = "A1";
-        //Debug.Log("Hello");
-        //Debug.Log(positionTxt.name);
-        ChangePoetry();
+        nurseImage.sprite = ChangePoetry();
+        positionTxt.text = "A1";
+        Debug.Log("Hello");
+        Debug.Log(positionTxt.name);
     }
 
     public void SetIndex(int index)
@@ -49,6 +48,7 @@ public class NurseScene : MonoBehaviour
 
     void SetCurrentIndex(int index)
     {
+        Sprite image;
         switch (index)
         {
             case 0:
@@ -58,10 +58,10 @@ public class NurseScene : MonoBehaviour
                 animator.SetTrigger("Grey");
                 break;
             case 2:
-                animator.SetTrigger("Blue");
+                animator.SetTrigger("Purple");
                 break;
             case 3:
-                animator.SetTrigger("Orange");
+                animator.SetTrigger("Green");
                 break;
             default:
                 animator.SetTrigger("None");
@@ -70,25 +70,26 @@ public class NurseScene : MonoBehaviour
         }
     }
 
-    void ChangePoetry()
+    Sprite ChangePoetry()
     {
+
+        Sprite image;
         switch (GameLoop.instance.currentNurseToMove)
         {
             case 0:
-                animator.SetTrigger("Bridget");
+                image = nurseImage1;
                 break;
             case 1:
-                animator.SetTrigger("Grey");
+                image = nurseImage2;
                 break;
             case 2:
-                animator.SetTrigger("Blue");
-                break;
-            case 3:
-                animator.SetTrigger("Orange");
+                image = nurseImage3;
                 break;
             default:
-                animator.SetTrigger("None");
+                image = nurseImage4;
                 break;
+
         }
+        return image;
     }
 }
