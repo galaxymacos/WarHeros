@@ -28,6 +28,7 @@ public class UiManager : MonoBehaviour
     public GameObject thirdNurseButton;
     public GameObject fourthNurseButton;
     public GameObject mineDetectionPanel;
+    public GameObject distanceHealPanel;
 
     public static UiManager instance;
 

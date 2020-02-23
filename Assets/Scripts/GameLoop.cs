@@ -103,6 +103,11 @@ public class GameLoop: MonoBehaviour
                 print("Replenish all the skills");
                 nurse.skill.Replenish();
             }
+
+            if (nurse.isDefusing)
+            {
+                nurse.isDefusing = false;
+            }
         }
     }
 

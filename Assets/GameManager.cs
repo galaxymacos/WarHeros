@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this);
-        bf = new BattleField(16,16,8,20);
+        bf = new BattleField();
     }
 
 
