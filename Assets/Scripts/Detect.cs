@@ -44,6 +44,7 @@ namespace Assets.Scripts
 
             }
             
+            print("Activate mine detection panel");
             UiManager.instance.mineDetectionPanel.SetActive(true);
         }
 
