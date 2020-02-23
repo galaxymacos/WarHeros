@@ -147,10 +147,21 @@ public class Events : MonoBehaviour
 
         string message = "";
 
-        foreach (var e in area)
+        for (int i = 0; i < 4; i++)
         {
-            message += e.Convert() + ", ";
+            message += area[i].Convert();
+            message += " , ";
         }
+        MessageSystem.instance.Print(message);
+
+
+        message = "";
+        for (int j = 0; j < 5; j++)
+        {
+            message += area[j+4].Convert();
+            message += " , ";
+        }
+
 
         MessageSystem.instance.Print(message);
 
