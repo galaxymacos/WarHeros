@@ -29,8 +29,9 @@ public class BattleField
     {
         //number of mine to place in each row
         var countAtRow = new int[depth];
+            var mineAtRow = new int[depth];
         //select wich row the mines go in
-        for (int i = 0; i < mineCount; i++)
+        for (int i = 0; i < soldierCount; i++)
         {
             //use for random
             int weight = 0;
@@ -41,17 +42,17 @@ public class BattleField
             {
                 //use the square of the row so there is more chance of higher row to get pick
                 //the more mine there are in a row the less chance there will be one more mine in it
-                int m = 0;
-                for(int j=0;i<width;i++)
+                
+                for(int j=0;j<width;j++)
                 {
                     if(IsOccupied(new Position(i,j)))
                     {
-                        m++;
+                        mineAtRow[r]++;
                     }
                 }
 
 
-                weigthAtRow[r] = (r + 1) * (width - m);
+                weigthAtRow[r] = (int)(Mathf.Sqrt((r + 1)) * (width - mineAtRow[r]));
             }
             //add the weight of every row for the random
             //Console.WriteLine("countarow"+countAtRow.Length);
@@ -78,10 +79,19 @@ public class BattleField
         //for each row
         for (int i = 0; i < depth; i++)
         {
-            int[] row = FisherYale(width);
+            List<int> newList = new List<int>();
+            //int[] newArray = new int[width - mineAtRow[i]];
+            for (int j = 0; j < width; j++)
+            {
+                if(!IsOccupied(new Position(i,j)))
+                {
+                    newList.Add(j);
+                }
+            }
+            int[] row = FisherYale(newList.ToArray());
             for (int j = 0; j < countAtRow[i]; j++)
             {
-                matrix[i, row[j]] = MINECHAR;
+                matrix[i, row[j]] = SOLDIERCHAR;
             }
         }
 
@@ -172,6 +182,19 @@ public class BattleField
         {
             output[i] = i;
         }
+        for (int i = 0; i < output.Length - 1; i++)
+        {
+            int r = Random.Range(i, output.Length);
+            //switch r and i
+            int temp = output[i];
+            output[i] = output[r];
+            output[r] = temp;
+        }
+        return output;
+    }
+    private int[] FisherYale(int[] toRdm)
+    {
+        var output = toRdm;
         for (int i = 0; i < output.Length - 1; i++)
         {
             int r = Random.Range(i, output.Length);
