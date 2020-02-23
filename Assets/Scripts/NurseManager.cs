@@ -90,6 +90,7 @@ public class NurseManager : MonoBehaviour
 
     public void ExplodeTheMineBeingStepedOn(Nurse nurse)
     {
+        MessageSystem.instance.Print("Explode the mine at "+nurse.position.Convert());
         GameManager.instance.bf.Demine(nurse.position);
     }
     
