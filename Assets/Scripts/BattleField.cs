@@ -5,7 +5,7 @@ public class BattleField
 {
     //Random rnjesus;
 
-    public enum Entities { mine,soldier};
+    public enum Entities { mine, soldier };
 
     char[,] matrix;
     const char MINECHAR = 'm';
@@ -29,8 +29,9 @@ public class BattleField
     {
         //number of mine to place in each row
         var countAtRow = new int[depth];
+        var mineAtRow = new int[depth];
         //select wich row the mines go in
-        for (int i = 0; i < mineCount; i++)
+        for (int i = 0; i < soldierCount; i++)
         {
             //use for random
             int weight = 0;
@@ -41,17 +42,17 @@ public class BattleField
             {
                 //use the square of the row so there is more chance of higher row to get pick
                 //the more mine there are in a row the less chance there will be one more mine in it
-                int m = 0;
-                for(int j=0;i<width;i++)
+
+                for (int j = 0; j < width; j++)
                 {
-                    if(IsOccupied(new Position(i,j)))
+                    if (IsOccupied(new Position(i, j)))
                     {
-                        m++;
+                        mineAtRow[r]++;
                     }
                 }
 
 
-                weigthAtRow[r] = (r + 1) * (width - m);
+                weigthAtRow[r] = (int)(Mathf.Sqrt((r + 1)) * (width - mineAtRow[r]));
             }
             //add the weight of every row for the random
             //Console.WriteLine("countarow"+countAtRow.Length);
@@ -78,10 +79,19 @@ public class BattleField
         //for each row
         for (int i = 0; i < depth; i++)
         {
-            int[] row = FisherYale(width);
+            List<int> newList = new List<int>();
+            //int[] newArray = new int[width - mineAtRow[i]];
+            for (int j = 0; j < width; j++)
+            {
+                if (!IsOccupied(new Position(i, j)))
+                {
+                    newList.Add(j);
+                }
+            }
+            int[] row = FisherYale(newList.ToArray());
             for (int j = 0; j < countAtRow[i]; j++)
             {
-                matrix[i, row[j]] = MINECHAR;
+                matrix[i, row[j]] = SOLDIERCHAR;
             }
         }
 
@@ -110,7 +120,7 @@ public class BattleField
         {
             Debug.Log(m.column + "," + m.row);
         }
-        SpawnEntities(soldierCount,Entities.soldier);
+        SpawnEntities(soldierCount, Entities.soldier);
     }
 
     private void FillField(int mineCount)
@@ -182,6 +192,19 @@ public class BattleField
         }
         return output;
     }
+    private int[] FisherYale(int[] toRdm)
+    {
+        var output = toRdm;
+        for (int i = 0; i < output.Length - 1; i++)
+        {
+            int r = Random.Range(i, output.Length);
+            //switch r and i
+            int temp = output[i];
+            output[i] = output[r];
+            output[r] = temp;
+        }
+        return output;
+    }
 
     public List<Position> GetMineArroundPosition(Position pos)
     {
@@ -189,15 +212,15 @@ public class BattleField
         List<Position> toCheck = new List<Position>();
         //tiles above
         toCheck.Add(new Position(pos.column - 1, pos.row + 1));
-        toCheck.Add(new Position(pos.column , pos.row + 1));
+        toCheck.Add(new Position(pos.column, pos.row + 1));
         toCheck.Add(new Position(pos.column + 1, pos.row + 1));
         //tiles below
         toCheck.Add(new Position(pos.column - 1, pos.row - 1));
         toCheck.Add(new Position(pos.column, pos.row - 1));
         toCheck.Add(new Position(pos.column + 1, pos.row - 1));
         //tiles to the sides
-        toCheck.Add(new Position(pos.column - 1, pos.row ));
-        toCheck.Add(new Position(pos.column + 1, pos.row ));
+        toCheck.Add(new Position(pos.column - 1, pos.row));
+        toCheck.Add(new Position(pos.column + 1, pos.row));
 
         foreach (var p in toCheck)
         {
@@ -212,11 +235,11 @@ public class BattleField
     public bool CheckForMine(Position pos)
     {
         //if out of board
-        if(!IsPosInBoard(pos))
+        if (!IsPosInBoard(pos))
         {
             return false;
         }
-        else if(matrix[pos.row,pos.column]==MINECHAR)
+        else if (matrix[pos.row, pos.column] == MINECHAR)
         {
             return true;
         }
@@ -248,9 +271,9 @@ public class BattleField
 
     public bool Demine(Position pos)
     {
-        if(IsPosInBoard(pos))
+        if (IsPosInBoard(pos))
         {
-            if(matrix[pos.row,pos.column]==MINECHAR)
+            if (matrix[pos.row, pos.column] == MINECHAR)
             {
                 matrix[pos.row, pos.column] = default;
                 return true;
@@ -261,7 +284,7 @@ public class BattleField
 
     public Position getTrenchPosition(int trenchIndex)
     {
-        return new Position( column:-1,row:-1*trenchIndex);
+        return new Position(column: -1, row: -1 * trenchIndex);
     }
 
     public bool IsNurseInTrench(Position pos)
@@ -271,16 +294,16 @@ public class BattleField
 
     public bool IsThereSoldier(Position pos)
     {
-        if(IsPosInBoard(pos))
+        if (IsPosInBoard(pos))
         {
             return matrix[pos.row, pos.column] == SOLDIERCHAR;
         }
         return false;
     }
 
-    public void SpawnEntities(int amount,Entities type)
+    public void SpawnEntities(int amount, Entities type)
     {
-        for(int i=0;i<amount;i++)
+        for (int i = 0; i < amount; i++)
         {
             while (!SpawnEntity(type)) ;
         }
@@ -289,7 +312,7 @@ public class BattleField
     private bool SpawnEntity(Entities type)
     {
         char ent = default;
-        switch(type)
+        switch (type)
         {
             case Entities.mine:
                 {
@@ -305,7 +328,7 @@ public class BattleField
 
         int rand = Random.Range(0, depth * width);
         Position randPos = new Position(row: rand / width, column: rand % width);
-        if(IsOccupied(randPos))
+        if (IsOccupied(randPos))
         {
             return false;
         }
@@ -318,7 +341,7 @@ public class BattleField
 
     private bool IsOccupied(Position pos)
     {
-        if(IsPosInBoard(pos))
+        if (IsPosInBoard(pos))
         {
             if (matrix[pos.row, pos.column] == default)
             {
@@ -336,7 +359,7 @@ public class BattleField
             for (int j = 0; j < width; j++)
             {
                 Position check = new Position(i, j);
-                if(IsThereSoldier(check))
+                if (IsThereSoldier(check))
                 {
                     output.Add(check);
                 }
@@ -347,9 +370,9 @@ public class BattleField
 
     public void RemoveSoldier(Position pos)
     {
-        if(IsPosInBoard(pos))
+        if (IsPosInBoard(pos))
         {
-            if(matrix[pos.row, pos.column]==SOLDIERCHAR)
+            if (matrix[pos.row, pos.column] == SOLDIERCHAR)
             {
                 matrix[pos.row, pos.column] = default;
             }
@@ -363,7 +386,7 @@ public class BattleField
         do
         {
             nPos = GetRdmPos();
-            if(hasToBeVacant)
+            if (hasToBeVacant)
             {
                 vacant = !IsOccupied(nPos);
             }
